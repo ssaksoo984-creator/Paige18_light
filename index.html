@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAIGE 18 Production — Film, Theatre & Series · Vancouver</title>
+  <meta name="description" content="PAIGE 18 Production is an independent film, theatre and web series company based in Vancouver, BC.">
+  <meta name="theme-color" content="#f3efea">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Jost:wght@200;400&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="PAIGE 18 Production — home">Paige 18 <small>Production</small></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#works">Works</a>
+      <a href="about.html">About</a>
+      <a href="#press">Press</a>
+      <a href="#people">People</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-btn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 1. Hero ============ -->
+    <section class="hero" aria-label="Featured trailer">
+      <div class="hero__media">
+        <div class="ph ph--dark" data-label="Video · Featured trailer · 16:9 loop"><span class="ph__mark">TRAILER</span></div>
+        <!-- Drop a muted, looping trailer cut at assets/video/hero-trailer.mp4 -->
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+          <source src="assets/video/hero-trailer.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="hero__inner">
+        <p class="hero__script script">Stories that stay<br>after the lights go down</p>
+
+        <div>
+          <div class="hero__bottom">
+            <h1 class="hero__title display">Made in<br>Vancouver.</h1>
+            <div class="hero__side">
+              <p>An independent production company for film, theatre and web series — telling small, honest stories for stage and screen.</p>
+              <a class="btn btn--light" href="#works">View Works <span class="arrow">→</span></a>
+            </div>
+          </div>
+          <div class="hero__meta">
+            <span><span class="sound-dot"></span>Now playing — Salt &amp; Cedar (2025)</span>
+            <span>49.2827° N, 123.1207° W</span>
+            <span>Scroll ↓</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Film</span><span>Theatre</span><span>Web Series</span><span>Development</span><span>Co-production</span><span>Vancouver, BC</span>
+        <span>Film</span><span>Theatre</span><span>Web Series</span><span>Development</span><span>Co-production</span><span>Vancouver, BC</span>
+      </div>
+    </div>
+
+    <!-- ============ 2. About ============ -->
+    <section class="section about" id="about">
+      <div class="section__head">
+        <h2 class="section__script script reveal">About us</h2>
+        <p class="section__aside script reveal">Every small story deserves a big stage — and a little patience.</p>
+      </div>
+
+      <div class="about__grid reveal">
+        <div class="about__cell about__cell--red">
+          <span class="eyebrow">(01) Philosophy</span>
+          <p class="about__lede">We make intimate, character-driven work rooted in the Pacific Northwest. Stage and screen are one practice to us — we develop slowly, cast boldly, and build every project with the people who will live inside it.</p>
+        </div>
+        <div class="about__cell">
+          <span class="eyebrow red">(02)</span>
+          <div>
+            <div class="stat__value" data-count="18">18</div>
+            <div class="stat__label">Productions<br>across stage &amp; screen</div>
+          </div>
+        </div>
+        <div class="about__cell">
+          <span class="eyebrow red">(03)</span>
+          <div>
+            <div class="stat__value" data-count="120" data-suffix="K">120K</div>
+            <div class="stat__label">Audience members<br>in seats &amp; online</div>
+          </div>
+        </div>
+        <div class="about__cell">
+          <span class="eyebrow red">(04)</span>
+          <div>
+            <div class="stat__value" data-count="24">24</div>
+            <div class="stat__label">Awards &amp;<br>festival selections</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__foot">
+        <p>Founded in 2020 on unceded Coast Salish territories — the lands of the xʷməθkʷəy̓əm, Sḵwx̱wú7mesh and səlilwətaɬ Nations.</p>
+        <a class="link-arrow" href="about.html">Learn more <span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <!-- ============ 3. Works ============ -->
+    <section class="section works" id="works">
+      <div class="works__head">
+        <h2 class="works__title display reveal">Works<sup id="works-total">12</sup></h2>
+        <div class="filters" role="group" aria-label="Filter works">
+          <button class="filter is-active" data-filter="all" aria-pressed="true">All<span class="count"></span></button>
+          <button class="filter" data-filter="theatre" aria-pressed="false">Theatre<span class="count"></span></button>
+          <button class="filter" data-filter="film" aria-pressed="false">Film<span class="count"></span></button>
+          <button class="filter" data-filter="series" aria-pressed="false">Series<span class="count"></span></button>
+        </div>
+      </div>
+      <div class="works__grid" id="works-grid"></div>
+    </section>
+
+    <!-- ============ 4. Press / Awards ============ -->
+    <section class="section press" id="press">
+      <svg class="press__flower" viewBox="0 0 400 400" aria-hidden="true">
+        <defs>
+          <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+          <radialGradient id="petal" cx="50%" cy="80%" r="80%">
+            <stop offset="0" stop-color="#3f6276" stop-opacity=".85"/>
+            <stop offset=".6" stop-color="#7c99ab" stop-opacity=".45"/>
+            <stop offset="1" stop-color="#cdd8e0" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <g filter="url(#soft)">
+          <ellipse cx="200" cy="130" rx="58" ry="110" fill="url(#petal)" transform="rotate(-28 200 200)"/>
+          <ellipse cx="200" cy="130" rx="58" ry="110" fill="url(#petal)" transform="rotate(26 200 200)"/>
+          <ellipse cx="200" cy="140" rx="50" ry="96" fill="url(#petal)" transform="rotate(-80 200 200)"/>
+          <ellipse cx="200" cy="140" rx="50" ry="96" fill="url(#petal)" transform="rotate(78 200 200)"/>
+          <path d="M200 210 C 196 270, 214 320, 196 400" stroke="#4d6d80" stroke-width="5" fill="none" opacity=".5"/>
+        </g>
+      </svg>
+
+      <div class="section__head">
+        <h2 class="section__script script reveal">Press &amp; awards</h2>
+        <span class="section__index" style="justify-self:end">(24)</span>
+      </div>
+
+      <div class="laurels reveal">
+        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Official Selection — Festival Name 2025"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">OFFICIAL SELECTION</text><text x="120" y="70" text-anchor="middle" font-size="15" font-weight="800" fill="currentColor">FESTIVAL NAME</text><text x="120" y="88" text-anchor="middle" font-size="9" font-weight="500" fill="currentColor">2025</text></svg></div>
+        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Winner — Best Short Drama"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">WINNER</text><text x="120" y="68" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">BEST SHORT</text><text x="120" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">DRAMA</text></svg></div>
+        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Official Selection — Web Series Festival 2024"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">OFFICIAL SELECTION</text><text x="120" y="68" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">WEB SERIES</text><text x="120" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">FESTIVAL 2024</text></svg></div>
+        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Nominee — Outstanding Production"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">NOMINEE</text><text x="120" y="68" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">OUTSTANDING</text><text x="120" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">PRODUCTION</text></svg></div>
+      </div>
+
+      <div class="quotes">
+        <h3 class="quotes__big display reveal">Every small story<br>— is a whole<br>world.</h3>
+        <ul class="quotes__list reveal">
+          <li class="quote"><p>“A quietly devastating debut. Salt &amp; Cedar lingers like coastal fog.”</p><cite>— Publication Name · Film review</cite></li>
+          <li class="quote"><p>“The most inventive use of a small stage this season.”</p><cite>— Arts Magazine · The Quiet Hours</cite></li>
+          <li class="quote"><p>“Sharp, funny and unmistakably Vancouver.”</p><cite>— City Weekly · Commercial Drive</cite></li>
+          <li class="quote"><p>“A company to watch on both sides of the curtain.”</p><cite>— Culture Desk · Profile</cite></li>
+        </ul>
+      </div>
+
+      <p class="press__tagline display">Every small step — a move toward change.</p>
+    </section>
+
+    <!-- ============ 5. People ============ -->
+    <section class="section people" id="people">
+      <div class="section__head">
+        <h2 class="section__script script reveal">The people</h2>
+        <p class="section__aside script reveal">Directors, writers &amp; producers who build the work together.</p>
+      </div>
+
+      <div class="people__grid">
+        <article class="person reveal">
+          <div class="person__img ph ph--stone" data-label="Portrait · 4:5"><span class="ph__mark">IMG</span></div>
+          <p class="person__role eyebrow">Founder · Artistic Director</p>
+          <h3 class="person__name">Mara<br>Ellison</h3>
+          <p class="person__bio">Theatre director turned filmmaker. Leads the company's creative slate across stage and screen.</p>
+        </article>
+        <article class="person reveal">
+          <div class="person__img ph ph--sand" data-label="Portrait · 4:5"><span class="ph__mark">IMG</span></div>
+          <p class="person__role eyebrow">Executive Producer</p>
+          <h3 class="person__name">Jordan<br>Vale</h3>
+          <p class="person__bio">Oversees financing, co-productions and distribution for every PAIGE 18 project.</p>
+        </article>
+        <article class="person reveal">
+          <div class="person__img ph ph--blue" data-label="Portrait · 4:5"><span class="ph__mark">IMG</span></div>
+          <p class="person__role eyebrow">Head Writer</p>
+          <h3 class="person__name">Theo<br>Park</h3>
+          <p class="person__bio">Screenwriter and series creator. Runs the company's development room for new voices.</p>
+        </article>
+        <article class="person reveal">
+          <div class="person__img ph ph--ash" data-label="Portrait · 4:5"><span class="ph__mark">IMG</span></div>
+          <p class="person__role eyebrow">Director · Series</p>
+          <h3 class="person__name">Ana<br>Ruiz</h3>
+          <p class="person__bio">Short-form specialist with a documentary eye. Directs our web series slate.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 6. Contact / Collaboration ============ -->
+    <section class="contact" id="contact">
+      <div class="contact__left">
+        <div>
+          <span class="eyebrow red">(06) Work with us</span>
+          <h2 class="contact__script script" style="margin-top:18px">The first step is just one message.</h2>
+        </div>
+
+        <div>
+          <div class="inquiry-tabs" role="tablist" aria-label="Inquiry type">
+            <button class="inquiry-tab is-active" role="tab" aria-selected="true" data-type="coproduction">
+              <strong>Co-production<br>&amp; Investment</strong>
+              <span>Partners, funds, broadcasters &amp; distributors.</span>
+            </button>
+            <button class="inquiry-tab" role="tab" aria-selected="false" data-type="casting">
+              <strong>Auditions<br>&amp; Crew</strong>
+              <span>Actors, crew and creatives — send your reel.</span>
+            </button>
+            <button class="inquiry-tab" role="tab" aria-selected="false" data-type="general">
+              <strong>General<br>Inquiry</strong>
+              <span>Press, screenings, everything else.</span>
+            </button>
+          </div>
+
+          <form class="form" id="contact-form" novalidate style="margin-top:8px">
+            <div class="field">
+              <label for="f-type">Inquiry type</label>
+              <select id="f-type" name="type">
+                <option value="coproduction">Co-production &amp; Investment</option>
+                <option value="casting">Auditions &amp; Crew</option>
+                <option value="general">General Inquiry</option>
+              </select>
+            </div>
+            <div class="form__row">
+              <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+              <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            </div>
+            <div class="field"><label for="f-extra" id="f-extra-label">Company / Fund</label><input id="f-extra" name="extra" type="text"></div>
+            <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4" required></textarea></div>
+            <div class="form__foot">
+              <p class="form__note">We read everything. Replies within 3–5 working days.</p>
+              <button class="btn btn--red" type="submit">Send message <span class="arrow">→</span></button>
+            </div>
+            <p class="form__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="contact__right">
+        <div class="contact__right-top"><span>Vancouver, BC</span><span class="script" style="font-size:22px;letter-spacing:0;text-transform:none">Paige 18</span></div>
+
+        <div class="contact__visual">
+          <div class="ph ph--stone" data-label="IMG · 3:4"><span class="ph__mark">IMG</span></div>
+          <p class="contact__email display"><a href="mailto:hello@paige18.com">hello@<br>paige18.com</a></p>
+        </div>
+
+        <div class="contact__lines">
+          <a href="mailto:production@paige18.com">production@paige18.com</a>
+          <a href="mailto:casting@paige18.com">casting@paige18.com</a>
+          <a href="tel:+16040000000">+1 (604) 000-0000</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ 7. Footer ============ -->
+  <footer class="site-footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h3 class="eyebrow">Studio</h3>
+        <address>PAIGE 18 Production<br>000 Placeholder Street<br>Vancouver, BC V6B 0A0<br>Canada</address>
+      </div>
+      <div class="footer__col">
+        <h3 class="eyebrow">Contact</h3>
+        <ul>
+          <li><a href="mailto:hello@paige18.com">hello@paige18.com</a></li>
+          <li><a href="tel:+16040000000">+1 (604) 000-0000</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="eyebrow">Follow</h3>
+        <ul>
+          <li><a href="#" rel="noopener">Instagram</a></li>
+          <li><a href="#" rel="noopener">Vimeo</a></li>
+          <li><a href="#" rel="noopener">YouTube</a></li>
+          <li><a href="#" rel="noopener">IMDb</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="eyebrow">Newsletter</h3>
+        <p style="margin:0 0 6px">Premieres, auditions and behind-the-scenes — a few times a year.</p>
+        <form class="newsletter" novalidate>
+          <label class="sr-only" for="nl-email">Email</label>
+          <input id="nl-email" type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe →</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__wordmark" aria-hidden="true">Paige 18</div>
+    <div class="footer__bar">
+      <span>© <span id="year">2026</span> PAIGE 18 Production. All rights reserved.</span>
+      <span>Film · Theatre · Series — Vancouver, BC</span>
+    </div>
+  </footer>
+
+  <!-- Laurel branch symbol -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="laurel-l" viewBox="0 0 240 120">
+      <g fill="currentColor">
+        <path d="M58 112 C 26 96, 14 56, 34 12" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <ellipse cx="50" cy="104" rx="3.6" ry="9" transform="rotate(-60 50 104)"/>
+        <ellipse cx="38" cy="94" rx="3.6" ry="9" transform="rotate(-42 38 94)"/>
+        <ellipse cx="28" cy="80" rx="3.6" ry="9" transform="rotate(-28 28 80)"/>
+        <ellipse cx="22" cy="64" rx="3.6" ry="9" transform="rotate(-12 22 64)"/>
+        <ellipse cx="22" cy="47" rx="3.6" ry="9" transform="rotate(4 22 47)"/>
+        <ellipse cx="26" cy="31" rx="3.6" ry="9" transform="rotate(18 26 31)"/>
+        <ellipse cx="33" cy="16" rx="3.2" ry="8" transform="rotate(30 33 16)"/>
+        <ellipse cx="46" cy="92" rx="3" ry="7.5" transform="rotate(30 46 92)"/>
+        <ellipse cx="36" cy="76" rx="3" ry="7.5" transform="rotate(40 36 76)"/>
+        <ellipse cx="32" cy="58" rx="3" ry="7.5" transform="rotate(52 32 58)"/>
+        <ellipse cx="33" cy="40" rx="3" ry="7.5" transform="rotate(64 33 40)"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
