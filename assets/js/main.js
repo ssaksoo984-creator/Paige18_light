@@ -19,7 +19,7 @@
 
   // Image block: real image when a path is given, tinted placeholder otherwise.
   function media(src, tone, label) {
-    var inner = src ? '<img src="' + escapeHtml(src) + '" alt="" loading="lazy">' : '<span class="ph__mark">IMG</span>';
+    var inner = src ? '<img src="' + escapeHtml(src) + '" alt="" loading="lazy" onerror="this.remove()">' : '<span class="ph__mark">IMG</span>';
     return '<div class="ph ph--' + tone + '" data-label="' + escapeHtml(label) + '">' + inner + "</div>";
   }
 
@@ -155,7 +155,7 @@
         "</div>" +
       "</section>" +
       '<section class="work-hero" style="margin-top:0">' +
-        media("", w.tone === "dark" || w.tone === "ash" ? w.tone : "dark", "Trailer · 16:9") +
+        media(w.id === "salt-and-cedar" ? "assets/img/hero.jpg" : w.poster, w.tone === "dark" || w.tone === "ash" ? w.tone : "dark", "Trailer · 16:9") +
         '<a class="work-hero__play" href="' + (w.trailer ? escapeHtml(w.trailer) : "#") + '"><span>Play</span></a>' +
       "</section>" +
       '<section class="work-detail">' +
@@ -167,7 +167,7 @@
         "</div>" +
       "</section>" +
       '<section class="gallery">' +
-        media("", w.tone, "Still 01") + media("", "stone", "Still 02") + media("", "blue", "Still 03") +
+        media(w.poster, w.tone, "Still 01") + media("", "stone", "Still 02") + media("", "blue", "Still 03") +
         media("", "sand", "Still 04") + media("", "ash", "Still 05") +
       "</section>" +
       '<nav class="pager" aria-label="More works">' +

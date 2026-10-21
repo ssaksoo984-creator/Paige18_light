@@ -148,6 +148,9 @@ input, select, textarea { font: inherit; color: inherit; }
   opacity: 0.55;
 }
 
+.ph:has(> img) .ph__mark,
+.ph:has(> img)::after { display: none; }
+
 /* ---------- Header ---------- */
 
 .site-header {

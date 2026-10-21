@@ -17,7 +17,7 @@ window.PAIGE_WORKS = [
     synopsis: "Shot over one wet autumn between Gibsons and Horseshoe Bay, Salt & Cedar is a quiet feature about inheritance, distance and the things we leave unsaid. Our first feature-length drama, developed with a local cast and crew of thirty.",
     credits: { Director: "Mara Ellison", Writer: "Theo Park", Producer: "Jordan Vale", Cast: "Lead Actor, Supporting Actor" },
     status: "Festival run",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/salt-and-cedar.jpg", preview: "", trailer: ""
   },
   {
     id: "the-quiet-hours",
@@ -30,7 +30,7 @@ window.PAIGE_WORKS = [
     synopsis: "An ensemble stage piece built from interviews with healthcare workers across Metro Vancouver. Premiered in a 120-seat black box and remounted the following season.",
     credits: { Director: "Mara Ellison", Playwright: "Ines Duarte", Producer: "Jordan Vale", Venue: "Studio Theatre, Vancouver" },
     status: "Remount 2026",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/the-quiet-hours.jpg", preview: "", trailer: ""
   },
   {
     id: "north-shore",
@@ -43,7 +43,7 @@ window.PAIGE_WORKS = [
     synopsis: "A half-hour web series about friendship and the cost of staying in the city you love. Written in a writers' room of emerging Vancouver voices.",
     credits: { Creator: "Theo Park", Director: "Ana Ruiz", Producer: "Jordan Vale", Episodes: "6" },
     status: "In post-production",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/north-shore.jpg", preview: "", trailer: ""
   },
   {
     id: "paper-moon",
@@ -56,7 +56,7 @@ window.PAIGE_WORKS = [
     synopsis: "A short film shot in a single location over three nights. Selected for festivals across Canada and the US.",
     credits: { Director: "Ana Ruiz", Writer: "Ana Ruiz", Producer: "Jordan Vale", DOP: "Kai Morgan" },
     status: "Released",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/paper-moon.jpg", preview: "", trailer: ""
   },
   {
     id: "glass-houses",
@@ -69,7 +69,7 @@ window.PAIGE_WORKS = [
     synopsis: "A dark chamber comedy for five actors. Staged in the round with the audience seated at the edge of the dinner table.",
     credits: { Director: "Mara Ellison", Playwright: "Ines Duarte", Producer: "Jordan Vale", Design: "Studio Placeholder" },
     status: "Closed",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/glass-houses.jpg", preview: "", trailer: ""
   },
   {
     id: "afterlight",
@@ -82,7 +82,7 @@ window.PAIGE_WORKS = [
     synopsis: "A short-form mystery series released weekly online. Built for mobile, shot entirely at night.",
     credits: { Creator: "Theo Park", Director: "Mara Ellison", Producer: "Jordan Vale", Episodes: "8" },
     status: "Streaming",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/afterlight.jpg", preview: "", trailer: ""
   },
   {
     id: "low-tide",
@@ -95,7 +95,7 @@ window.PAIGE_WORKS = [
     synopsis: "A coastal short about grief and humour, made with a crew of nine.",
     credits: { Director: "Ana Ruiz", Writer: "Theo Park", Producer: "Jordan Vale", DOP: "Kai Morgan" },
     status: "Released",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/low-tide.jpg", preview: "", trailer: ""
   },
   {
     id: "the-understudy",
@@ -108,7 +108,7 @@ window.PAIGE_WORKS = [
     synopsis: "A backstage thriller performed in an actual working theatre — the audience moves between the wings, the dressing room and the stage.",
     credits: { Director: "Mara Ellison", Playwright: "Ines Duarte", Producer: "Jordan Vale", Venue: "Site-specific" },
     status: "Closed",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/the-understudy.jpg", preview: "", trailer: ""
   },
   {
     id: "commercial-drive",
@@ -121,7 +121,7 @@ window.PAIGE_WORKS = [
     synopsis: "An anthology web series — each episode follows a different storefront on the same block of East Vancouver.",
     credits: { Creator: "Ana Ruiz", Director: "Ana Ruiz", Producer: "Jordan Vale", Episodes: "5" },
     status: "Streaming",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/commercial-drive.jpg", preview: "", trailer: ""
   },
   {
     id: "winter-garden",
@@ -134,7 +134,7 @@ window.PAIGE_WORKS = [
     synopsis: "Our first short. Made on a micro budget with a borrowed camera and a lot of patience.",
     credits: { Director: "Mara Ellison", Writer: "Mara Ellison", Producer: "Jordan Vale", DOP: "Kai Morgan" },
     status: "Released",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/winter-garden.jpg", preview: "", trailer: ""
   },
   {
     id: "rain-city-monologues",
@@ -147,7 +147,7 @@ window.PAIGE_WORKS = [
     synopsis: "The project the company is named after: eighteen short monologues by eighteen local writers, performed back to back.",
     credits: { Director: "Mara Ellison", Writers: "18 local playwrights", Producer: "Jordan Vale", Venue: "Community Hall" },
     status: "Closed",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/rain-city-monologues.jpg", preview: "", trailer: ""
   },
   {
     id: "dead-air",
@@ -160,7 +160,7 @@ window.PAIGE_WORKS = [
     synopsis: "A dark comedy series currently in development. Seeking co-production partners.",
     credits: { Creator: "Theo Park", Director: "TBA", Producer: "Jordan Vale", Episodes: "6" },
     status: "In development",
-    poster: "", preview: "", trailer: ""
+    poster: "assets/img/dead-air.jpg", preview: "", trailer: ""
   }
 ];
 
