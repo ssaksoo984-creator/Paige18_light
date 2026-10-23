@@ -9,7 +9,7 @@ No build step — open `index.html` or serve the folder (`python3 -m http.server
 - `work.html?id=<slug>` — project detail page, rendered from `assets/js/data.js`
 
 ## Replacing placeholders
-- **Hero trailer**: add a muted loop at `assets/video/hero-trailer.mp4`.
+- **Hero trailer**: set the YouTube video ID in `data-youtube` on `.hero__yt` in `index.html` (plays muted, looped, no controls).
 - **Works**: edit `assets/js/data.js` — set `poster` (2:3 image), `preview` (short hover clip) and `trailer` per project.
 - **People / contact images**: replace the `.ph` blocks with `<img>` inside them.
 - All names, numbers, quotes, festivals and addresses are placeholder copy.

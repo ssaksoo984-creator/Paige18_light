@@ -253,7 +253,19 @@ body.menu-open .menu-btn span:last-child { top: 9px; transform: rotate(-45deg); 
 
 .hero__media { position: absolute; inset: 0; }
 .hero__media .ph { position: absolute; inset: 0; }
-.hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
+.hero__yt { position: absolute; inset: 0; z-index: 2; overflow: hidden; pointer-events: none; }
+.hero__yt iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100%, 177.78vh);   /* 16:9 cover */
+  height: max(100%, 56.25vw);
+  transform: translate(-50%, -50%) scale(1.15); /* crop YouTube chrome */
+  border: 0;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease);
+}
+.hero__yt.is-ready iframe { opacity: 1; }
 
 .hero__media .ph--dark { animation: drift 18s ease-in-out infinite alternate; }
 

@@ -50,6 +50,25 @@
     });
   }
 
+  /* ---------- Hero trailer (YouTube, muted loop) ---------- */
+
+  var yt = $(".hero__yt");
+  if (yt && yt.getAttribute("data-youtube")) {
+    var vid = encodeURIComponent(yt.getAttribute("data-youtube"));
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + vid +
+      "?autoplay=1&mute=1&loop=1&playlist=" + vid +
+      "&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3";
+    iframe.title = "Featured trailer";
+    iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+    iframe.tabIndex = -1;
+    // Fade in once loaded; the still image stays underneath as the poster
+    iframe.addEventListener("load", function () {
+      setTimeout(function () { yt.classList.add("is-ready"); }, 800);
+    });
+    yt.appendChild(iframe);
+  }
+
   /* ---------- Works grid (home) ---------- */
 
   var grid = $("#works-grid");
