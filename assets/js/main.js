@@ -58,13 +58,22 @@
     var iframe = document.createElement("iframe");
     iframe.src = "https://www.youtube-nocookie.com/embed/" + vid +
       "?autoplay=1&mute=1&loop=1&playlist=" + vid +
-      "&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3";
+      "&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&enablejsapi=1" +
+      "&origin=" + encodeURIComponent(location.origin);
     iframe.title = "Featured trailer";
     iframe.allow = "autoplay; encrypted-media; picture-in-picture";
     iframe.tabIndex = -1;
-    // Fade in once loaded; the still image stays underneath as the poster
+    // Reveal only once YouTube reports the video is playing, so a blocked or
+    // failed embed never covers the still image underneath.
     iframe.addEventListener("load", function () {
-      setTimeout(function () { yt.classList.add("is-ready"); }, 800);
+      try { iframe.contentWindow.postMessage('{"event":"listening","id":"hero","channel":"widget"}', "*"); } catch (e) {}
+    });
+    window.addEventListener("message", function (e) {
+      if (!/^https:\/\/(www\.)?youtube(-nocookie)?\.com$/.test(e.origin)) return;
+      var data;
+      try { data = typeof e.data === "string" ? JSON.parse(e.data) : e.data; } catch (err) { return; }
+      var state = data && (data.info && data.info.playerState !== undefined ? data.info.playerState : data.event === "onStateChange" ? data.info : undefined);
+      if (state === 1) yt.classList.add("is-ready");
     });
     yt.appendChild(iframe);
   }

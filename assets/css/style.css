@@ -195,7 +195,10 @@ input, select, textarea { font: inherit; color: inherit; }
   opacity: 0;
 }
 
+/* White over the home hero and on the red mobile menu; original red on the light header */
+.site-header:not(.is-solid):not(.site-header--solid) .logo__img--white,
 body.menu-open .site-header .logo__img--white { opacity: 1; }
+.site-header:not(.is-solid):not(.site-header--solid) .logo__img--red,
 body.menu-open .site-header .logo__img--red { opacity: 0; }
 
 .nav { display: flex; gap: clamp(18px, 2.4vw, 36px); }
@@ -321,8 +324,10 @@ body.menu-open .menu-btn span:last-child { top: 9px; transform: rotate(-45deg); 
   justify-items: end;
   gap: 18px;
   text-align: right;
-  max-width: 320px;
+  max-width: 400px;
 }
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
 
 .hero__side p { margin: 0; font-size: 13px; line-height: 1.45; opacity: 0.85; }
 
@@ -1216,6 +1221,7 @@ body.menu-open .menu-btn span:last-child { top: 9px; transform: rotate(-45deg); 
 
   .hero__bottom { grid-template-columns: 1fr; }
   .hero__side { justify-items: start; text-align: left; }
+  .hero__actions { justify-content: flex-start; }
   .hero__meta span:nth-child(2) { display: none; }
 
   .section__head { grid-template-columns: 1fr; }
