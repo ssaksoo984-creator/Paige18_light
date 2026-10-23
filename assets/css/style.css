@@ -188,18 +188,12 @@ input, select, textarea { font: inherit; color: inherit; }
   transition: opacity 0.4s var(--ease);
 }
 
-.logo__img--red {
+.logo__img--white {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
-
-.site-header.is-solid .logo__img--white,
-.site-header--solid .logo__img--white { opacity: 0; }
-
-.site-header.is-solid .logo__img--red,
-.site-header--solid .logo__img--red { opacity: 1; }
 
 body.menu-open .site-header .logo__img--white { opacity: 1; }
 body.menu-open .site-header .logo__img--red { opacity: 0; }
@@ -295,8 +289,9 @@ body.menu-open .menu-btn span:last-child { top: 9px; transform: rotate(-45deg); 
   position: relative;
   z-index: 4;
   height: 100%;
-  display: grid;
-  grid-template-rows: 1fr auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   padding: calc(var(--header-h) + 24px) var(--gutter) 28px;
 }
 
@@ -448,17 +443,24 @@ body.menu-open .menu-btn span:last-child { top: 9px; transform: rotate(-45deg); 
 }
 
 .section__script {
-  font-size: clamp(54px, 7vw, 104px);
+  font-size: clamp(40px, 5.6vw, 88px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
   color: var(--red);
   margin: 0;
 }
 
 .section__aside {
   justify-self: end;
-  max-width: 380px;
+  max-width: 320px;
+  margin: 0;
   text-align: right;
   color: var(--red);
-  font-size: clamp(24px, 2.6vw, 36px);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 /* ---------- About ---------- */
@@ -810,10 +812,14 @@ body.menu-open .menu-btn span:last-child { top: 9px; transform: rotate(-45deg); 
 }
 
 .contact__script {
-  font-size: clamp(54px, 6.4vw, 96px);
+  font-size: clamp(40px, 5vw, 80px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
   color: var(--red);
   margin: 0;
-  max-width: 9em;
+  max-width: 10em;
 }
 
 .inquiry-tabs {
@@ -1011,7 +1017,7 @@ body.menu-open .menu-btn span:last-child { top: 9px; transform: rotate(-45deg); 
 }
 
 .footer__wordmark img {
-  width: min(100%, 600px);
+  width: min(100%, 260px); /* ≤ half the 531px source, stays sharp on retina */
   height: auto;
 }
 
