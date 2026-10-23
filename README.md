@@ -9,7 +9,7 @@ No build step — open `index.html` or serve the folder (`python3 -m http.server
 - `work.html?id=<slug>` — project detail page, rendered from `assets/js/data.js`
 
 ## Replacing placeholders
-- **Hero trailer**: set the YouTube video ID in `data-youtube` on `.hero__yt` in `index.html` (plays muted, looped, no controls).
+- **Hero video**: `assets/video/hero-reel.mp4` plays muted and looped (poster `assets/img/reel.jpg`). The Watch Trailer button links to YouTube; a YouTube background is still supported via `<div class="hero__yt" data-youtube="VIDEO_ID"></div>`.
 - **Works**: edit `assets/js/data.js` — set `poster` (2:3 image), `preview` (short hover clip) and `trailer` per project.
 - **People / contact images**: replace the `.ph` blocks with `<img>` inside them.
 - **Logo**: `assets/img/logo/` — original colours; white versions only for use on red backgrounds.

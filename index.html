@@ -38,9 +38,9 @@
     <!-- ============ 1. Hero ============ -->
     <section class="hero" aria-label="Featured trailer">
       <div class="hero__media">
-        <div class="ph ph--dark" data-label="Video · Featured trailer · 16:9 loop"><img src="assets/img/hero.jpg" alt="" onerror="this.remove()"><span class="ph__mark">TRAILER</span></div>
-        <!-- Featured trailer: swap data-youtube for any YouTube video ID (placeholder: "Tears of Steel", Blender Foundation, CC BY) -->
-        <div class="hero__yt" data-youtube="R6MlUcmOul8" aria-hidden="true"></div>
+        <div class="ph ph--dark" data-label="Video · Featured trailer · 16:9 loop"><img src="assets/img/reel.jpg" alt="" onerror="this.remove()"><span class="ph__mark">TRAILER</span></div>
+        <!-- Hero reel: muted loop. For a YouTube background instead, use <div class="hero__yt" data-youtube="VIDEO_ID"></div> -->
+        <video class="hero__video" src="assets/video/hero-reel.mp4" poster="assets/img/reel.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
       </div>
 
       <div class="hero__inner">
