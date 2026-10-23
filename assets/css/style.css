@@ -7,13 +7,13 @@
   --paper: #f8f5f1;
   --ink: #1b1817;
   --ink-soft: #5d5653;
-  --red: #b23b2f;        /* point red, slightly desaturated */
-  --red-deep: #93302a;
-  --red-tint: #e9d3cd;
+  --red: #d01d29;        /* point red: a shade darker than the logo red #ea1621 */
+  --red-deep: #a8141f;
+  --red-tint: #f4d4d3;
   --blue: #cdd8e0;       /* pale editorial blue */
   --blue-deep: #6f8a9c;
   --stone: #d9d3cc;
-  --line: rgba(178, 59, 47, 0.38);
+  --line: rgba(208, 29, 41, 0.34);
   --line-ink: rgba(27, 24, 23, 0.14);
 
   --f-sans: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
@@ -131,7 +131,7 @@ input, select, textarea { font: inherit; color: inherit; }
 
 .ph--stone { background: radial-gradient(120% 90% at 30% 20%, #e7e1da 0%, #cfc7bf 60%, #b9b0a7 100%); color: var(--ink); }
 .ph--dark  { background: radial-gradient(110% 80% at 50% 35%, #4a4644 0%, #1f1c1b 65%, #0f0d0d 100%); color: #f3efea; }
-.ph--red   { background: radial-gradient(120% 90% at 70% 30%, #c4564a 0%, #a3362c 55%, #7a2620 100%); color: #f8e9e5; }
+.ph--red   { background: radial-gradient(120% 90% at 70% 30%, #df4a52 0%, #c01c27 55%, #8d121b 100%); color: #f8e9e5; }
 .ph--blue  { background: radial-gradient(120% 90% at 40% 30%, #e1e8ee 0%, #b9c8d3 55%, #8ea4b4 100%); color: #213441; }
 .ph--sand  { background: radial-gradient(120% 90% at 60% 20%, #efe7dc 0%, #d8c9b5 60%, #b8a58c 100%); color: var(--ink); }
 .ph--ash   { background: linear-gradient(160deg, #8b8580 0%, #4c4845 60%, #2b2826 100%); color: #f3efea; }
@@ -669,7 +669,7 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
   flex-direction: column;
   justify-content: space-between;
   padding: 18px;
-  background: rgba(178, 59, 47, 0.9);
+  background: rgba(208, 29, 41, 0.9);
   color: var(--paper);
   opacity: 0;
   transition: opacity 0.4s var(--ease);

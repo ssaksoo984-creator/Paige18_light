@@ -16,6 +16,6 @@ No build step — open `index.html` or serve the folder (`python3 -m http.server
 - All names, numbers, quotes, festivals and addresses are placeholder copy.
 
 ## Design tokens (`assets/css/style.css`)
-- Point red `#b23b2f` (slightly desaturated), background `#f3efea`, pale blue `#cdd8e0`
+- Point red `#d01d29` (a shade darker than the logo red), background `#f3efea`, pale blue `#cdd8e0`
 - Type: Inter Tight (headlines), Jost 200 (wordmark), Mrs Saint Delafield (script accents)
 - Contact form & newsletter are front-end only — connect to Formspree / Netlify Forms etc.
