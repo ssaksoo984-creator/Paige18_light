@@ -218,20 +218,17 @@
         "</div>" +
       "</section>" +
       '<section class="work-hero" style="margin-top:0">' +
-        media(w.poster, w.tone === "dark" || w.tone === "ash" ? w.tone : "dark", "Trailer · 16:9") +
-        '<a class="work-hero__play" href="' + (w.trailer ? escapeHtml(w.trailer) : "#") + '"><span>Play</span></a>' +
+        media(w.still || w.poster, w.tone === "dark" || w.tone === "ash" ? w.tone : "dark", "Still · 16:9") +
+        (w.trailer ? '<a class="work-hero__play" href="' + escapeHtml(w.trailer) + '" target="_blank" rel="noopener"><span>Play</span></a>' : "") +
       "</section>" +
       '<section class="work-detail">' +
-        '<div><span class="eyebrow red">Details</span><dl class="facts" style="margin-top:16px">' + facts + "</dl></div>" +
+        '<div>' + (w.poster ? '<img class="work-poster" src="' + escapeHtml(w.poster) + '" alt="' + escapeHtml(w.title) + ' poster">' : "") +
+          '<span class="eyebrow red">Details</span><dl class="facts" style="margin-top:16px">' + facts + "</dl></div>" +
         '<div class="prose">' +
           '<p class="lead">' + escapeHtml(w.logline) + "</p>" +
           "<p>" + escapeHtml(w.synopsis) + "</p>" +
           '<p style="margin-top:28px"><a class="link-arrow red" href="index.html#contact">Collaborate on this project <span class="arrow">→</span></a></p>' +
         "</div>" +
-      "</section>" +
-      '<section class="gallery">' +
-        media(w.poster, w.tone, "Still 01") + media("", "stone", "Still 02") + media("", "blue", "Still 03") +
-        media("", "sand", "Still 04") + media("", "ash", "Still 05") +
       "</section>" +
       '<nav class="pager" aria-label="More works">' +
         '<a href="work.html?id=' + encodeURIComponent(prev.id) + '"><span class="eyebrow">← Previous</span><div class="display">' + escapeHtml(prev.title) + "</div></a>" +
