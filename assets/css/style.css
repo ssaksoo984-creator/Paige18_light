@@ -179,8 +179,12 @@ input, select, textarea { font: inherit; color: inherit; }
 .logo {
   position: relative;
   display: block;
-  height: 40px;
+  height: 54px;
 }
+
+/* Logo concept: only the chosen concept's artwork is shown */
+html[data-logo="a"] .lg-b,
+html[data-logo="b"] .lg-a { display: none !important; }
 
 .logo__img {
   height: 100%;
@@ -219,10 +223,8 @@ body.menu-open .site-header .logo__img--red { opacity: 0; }
   transition: opacity 0.45s var(--ease), visibility 0.45s;
 }
 
-.nav__mark {
-  height: min(62vh, 520px);
-  width: auto;
-}
+.nav__mark { display: flex; align-items: center; }
+.nav__mark img { width: min(34vw, 440px); height: auto; }
 
 .nav__links { display: flex; flex-direction: column; gap: 2px; }
 
@@ -1071,7 +1073,7 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
 }
 
 .footer__wordmark img {
-  width: min(100%, 160px);
+  width: min(100%, 220px);
   height: auto;
 }
 
@@ -1084,6 +1086,171 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
   letter-spacing: 0.06em;
   border-top: 1px solid var(--line);
 }
+
+/* ---------- Hero eyebrow ---------- */
+
+.hero__eyebrow { display: block; margin-bottom: 18px; opacity: 0.9; }
+
+/* ---------- Founder ---------- */
+
+.founder__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  border-top: 1px solid var(--line);
+}
+
+.founder__img {
+  aspect-ratio: 4 / 5;
+  max-width: 100%;
+  margin: 14px;
+}
+
+.founder__body {
+  min-width: 0;
+  padding: clamp(28px, 4vw, 64px) var(--gutter);
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.founder__body p { margin: 0; max-width: 60ch; font-size: clamp(15px, 1.2vw, 17px); line-height: 1.6; color: var(--ink-soft); }
+.founder__body .eyebrow { color: var(--red); }
+
+.founder__name {
+  margin: 0;
+  font-size: clamp(56px, 8vw, 128px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.045em;
+  line-height: 0.88;
+  color: var(--red);
+}
+
+.founder__body p.founder__lede {
+  color: var(--ink);
+  font-size: clamp(19px, 1.7vw, 25px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.founder__body .link-arrow { align-self: flex-start; margin-top: 8px; }
+
+.contact__mark img { height: 48px; width: auto; }
+
+/* ---------- Entry: logo chooser ---------- */
+
+body.intro-open { overflow: hidden; }
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(20px, 3vw, 40px);
+  padding: clamp(28px, 5vw, 64px) var(--gutter);
+  background: var(--bg);
+  color: var(--ink);
+  overflow-y: auto;
+  transition: opacity 0.6s var(--ease), visibility 0.6s;
+}
+
+.intro.is-leaving { opacity: 0; visibility: hidden; }
+
+.intro__head { display: grid; gap: 10px; justify-items: center; text-align: center; }
+.intro__head .eyebrow { color: var(--red); }
+
+.intro__title {
+  margin: 0;
+  font-size: clamp(32px, 4.4vw, 64px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  text-wrap: balance;
+}
+
+.intro__note { margin: 0; font-size: 13px; color: var(--ink-soft); }
+
+.intro__options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  min-height: 0;
+}
+
+.intro__card {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+  padding: clamp(24px, 4vw, 56px) clamp(16px, 3vw, 40px) 20px;
+  background: var(--paper);
+  transition: background 0.3s var(--ease);
+}
+
+.intro__card + .intro__card { border-left: 1px solid var(--line); }
+
+.intro__card img {
+  width: auto;
+  max-width: min(100%, 420px);
+  max-height: 46vh;
+  transition: transform 0.6s var(--ease);
+}
+
+.intro__card:hover { background: #fff; }
+.intro__card:hover img { transform: scale(1.03); }
+.intro__card:focus-visible { outline: 2px solid var(--red); outline-offset: -6px; }
+
+.intro__label {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.intro__label strong { color: var(--red); font-weight: 700; }
+
+/* ---------- Logo concept toggle ---------- */
+
+.header__right { display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); }
+
+.logo-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 3px 3px 12px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.logo-switch span { margin-right: 6px; opacity: 0.85; }
+
+.logo-switch button {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-weight: 700;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.site-header:not(.is-solid):not(.site-header--solid) .logo-switch button[aria-pressed="true"] { color: var(--ink); background: #f8f5f1; }
+.site-header.is-solid .logo-switch button[aria-pressed="true"],
+.site-header--solid .logo-switch button[aria-pressed="true"] { color: var(--paper); background: var(--red); }
+
+body.menu-open .logo-switch { opacity: 0; pointer-events: none; }
 
 /* ---------- Reveal ---------- */
 
@@ -1243,13 +1410,20 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
     row-gap: 28px;
   }
 
-  .nav__mark { height: min(30vh, 220px); }
+  .nav__mark img { width: min(56vw, 220px); }
   .nav__links { align-self: center; }
   .nav__links a { font-size: clamp(40px, 12vw, 64px); }
   .nav__foot { flex-wrap: wrap; }
   .menu-btn__label { display: none; }
 
-  .logo { height: 32px; }
+  .founder__grid { grid-template-columns: 1fr; }
+  .founder__body { border-left: 0; border-top: 1px solid var(--line); }
+
+  .intro__options { grid-template-columns: 1fr; }
+  .intro__card + .intro__card { border-left: 0; border-top: 1px solid var(--line); }
+  .intro__card img { max-height: 26vh; }
+
+  .logo { height: 44px; }
 
   .hero__bottom { grid-template-columns: 1fr; }
   .hero__side { justify-items: start; text-align: left; }

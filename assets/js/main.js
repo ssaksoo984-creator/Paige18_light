@@ -23,6 +23,41 @@
     return '<div class="ph ph--' + tone + '" data-label="' + escapeHtml(label) + '">' + inner + "</div>";
   }
 
+  /* ---------- Logo concept (A: sketch poppy · B: red poppy) ---------- */
+
+  var LOGO_KEY = "paige18-logo";
+
+  function setLogo(v) {
+    if (v !== "a" && v !== "b") return;
+    document.documentElement.setAttribute("data-logo", v);
+    try { localStorage.setItem(LOGO_KEY, v); } catch (e) {}
+    var fav = $('link[rel="icon"]');
+    if (fav) fav.href = "assets/img/logo/concepts/favicon-" + v + ".png";
+    $$("[data-pick]").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-pick") === v ? "true" : "false");
+    });
+  }
+
+  setLogo(document.documentElement.getAttribute("data-logo") || "a");
+
+  $$(".logo-switch [data-pick]").forEach(function (b) {
+    b.addEventListener("click", function () { setLogo(b.getAttribute("data-pick")); });
+  });
+
+  // Entry screen: pick a logo concept, then enter the site
+  var intro = $("#intro");
+  if (intro) {
+    document.body.classList.add("intro-open");
+    $$("[data-pick]", intro).forEach(function (b) {
+      b.addEventListener("click", function () {
+        setLogo(b.getAttribute("data-pick"));
+        intro.classList.add("is-leaving");
+        document.body.classList.remove("intro-open");
+        setTimeout(function () { intro.hidden = true; }, 700);
+      });
+    });
+  }
+
   /* ---------- Header ---------- */
 
   var header = $(".site-header");
@@ -91,14 +126,14 @@
           '<div class="work__poster">' + media(w.poster, w.tone, "Poster · 2:3") + "</div>" +
           '<div class="work__hover" aria-hidden="true">' +
             hoverMedia +
-            '<span class="preview-tag"><span class="sound-dot"></span>Preview</span>' +
+            '<span class="preview-tag">' + escapeHtml(w.status) + '</span>' +
             '<p class="work__logline">' + escapeHtml(w.logline) + "</p>" +
             '<span class="eyebrow">View project →</span>' +
           "</div>" +
           '<div class="work__meta">' +
             '<span class="work__name">' + escapeHtml(w.title) + "</span>" +
-            '<span class="work__year">' + w.year + "</span>" +
-            '<span class="work__type">' + TYPES[w.type] + " · " + escapeHtml(w.runtime) + "</span>" +
+            '<span class="work__year">' + escapeHtml(w.year || w.status) + "</span>" +
+            '<span class="work__type">' + TYPES[w.type] + "</span>" +
           "</div>" +
           '<a class="work__link" href="work.html?id=' + encodeURIComponent(w.id) + '"><span class="sr-only">' + escapeHtml(w.title) + "</span></a>" +
         "</article>"
@@ -167,7 +202,7 @@
     var prev = works[(idx - 1 + works.length) % works.length];
     var next = works[(idx + 1) % works.length];
 
-    document.title = w.title + " — PAIGE 18 Production";
+    document.title = w.title + " — Paige 18 Productions";
 
     var facts = Object.keys(w.credits).map(function (k) {
       return "<div><dt>" + escapeHtml(k) + "</dt><dd>" + escapeHtml(w.credits[k]) + "</dd></div>";
@@ -178,20 +213,20 @@
         '<div class="crumbs"><a href="index.html#works">Works</a> / ' + TYPES[w.type] + "</div>" +
         '<h1 class="display">' + escapeHtml(w.title) + "</h1>" +
         '<div class="page-hero__row">' +
-          '<span class="eyebrow">' + TYPES[w.type] + " · " + w.year + " · " + escapeHtml(w.runtime) + "</span>" +
+          '<span class="eyebrow">' + escapeHtml([TYPES[w.type], w.year].filter(Boolean).join(" · ")) + "</span>" +
           '<span class="eyebrow">' + escapeHtml(w.status) + "</span>" +
         "</div>" +
       "</section>" +
       '<section class="work-hero" style="margin-top:0">' +
-        media(w.id === "salt-and-cedar" ? "assets/img/hero.jpg" : w.poster, w.tone === "dark" || w.tone === "ash" ? w.tone : "dark", "Trailer · 16:9") +
+        media(w.poster, w.tone === "dark" || w.tone === "ash" ? w.tone : "dark", "Trailer · 16:9") +
         '<a class="work-hero__play" href="' + (w.trailer ? escapeHtml(w.trailer) : "#") + '"><span>Play</span></a>' +
       "</section>" +
       '<section class="work-detail">' +
-        '<div><span class="eyebrow red">Credits</span><dl class="facts" style="margin-top:16px">' + facts + "</dl></div>" +
+        '<div><span class="eyebrow red">Details</span><dl class="facts" style="margin-top:16px">' + facts + "</dl></div>" +
         '<div class="prose">' +
           '<p class="lead">' + escapeHtml(w.logline) + "</p>" +
           "<p>" + escapeHtml(w.synopsis) + "</p>" +
-          '<p style="margin-top:28px"><a class="link-arrow red" href="index.html#contact">Screening & distribution enquiries <span class="arrow">→</span></a></p>' +
+          '<p style="margin-top:28px"><a class="link-arrow red" href="index.html#contact">Collaborate on this project <span class="arrow">→</span></a></p>' +
         "</div>" +
       "</section>" +
       '<section class="gallery">' +

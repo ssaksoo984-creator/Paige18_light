@@ -1,37 +1,49 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-logo="a">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Work — PAIGE 18 Production</title>
-  <meta name="description" content="PAIGE 18 Production is an independent film, theatre and web series company based in Vancouver, BC.">
-  <link rel="icon" type="image/png" href="assets/img/logo/favicon.png">
-  <link rel="apple-touch-icon" href="assets/img/logo/favicon.png">
+  <title>Work — Paige 18 Productions</title>
+  <meta name="description" content="Paige 18 Productions is a boutique production company in Vancouver, B.C., founded by Canadian actress, writer, producer and director Rhonda Dent.">
+  <script>try{var l=localStorage.getItem("paige18-logo");if(l==="a"||l==="b")document.documentElement.setAttribute("data-logo",l)}catch(e){}</script>
+  <link rel="icon" type="image/png" href="assets/img/logo/concepts/favicon-a.png">
+  <link rel="apple-touch-icon" href="assets/img/logo/concepts/favicon-a.png">
   <meta name="theme-color" content="#f3efea">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Jost:wght@200;400&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Jost:wght@200;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
   <header class="site-header site-header--solid">
-    <a class="logo" href="index.html" aria-label="PAIGE 18 Production — home">
-      <img class="logo__img logo__img--red" src="assets/img/logo/wordmark.png" alt="PAIGE 18 Production" width="452" height="193">
-      <img class="logo__img logo__img--white" src="assets/img/logo/wordmark-white.png" alt="" width="452" height="193">
+    <a class="logo" href="index.html" aria-label="Paige 18 Productions — home">
+      <img class="logo__img logo__img--red lg-a" src="assets/img/logo/concepts/logo-a-mark.png" alt="Paige 18 Productions" width="488" height="514">
+      <img class="logo__img logo__img--white lg-a" src="assets/img/logo/concepts/logo-a-mark-white.png" alt="" width="488" height="514">
+      <img class="logo__img logo__img--red lg-b" src="assets/img/logo/concepts/logo-b-mark.png" alt="Paige 18 Productions" width="769" height="754">
+      <img class="logo__img logo__img--white lg-b" src="assets/img/logo/concepts/logo-b-mark-white.png" alt="" width="769" height="754">
     </a>
     <nav class="nav" id="nav" aria-label="Main">
-      <img class="nav__mark" src="assets/img/logo/mark-vertical-white.png" alt="" width="225" height="531">
+      <div class="nav__mark">
+        <img class="lg-a" src="assets/img/logo/concepts/logo-a-white.png" alt="" width="985" height="750">
+        <img class="lg-b" src="assets/img/logo/concepts/logo-b-white.png" alt="" width="985" height="963">
+      </div>
       <div class="nav__links">
         <a href="index.html#works">Works</a>
         <a href="about.html">About</a>
-        <a href="index.html#press">Press</a>
-        <a href="index.html#people">People</a>
+        <a href="index.html#founder">Founder</a>
         <a href="index.html#contact">Contact</a>
       </div>
-      <div class="nav__foot"><span>Film · Theatre · Series</span><span>Vancouver, BC</span><a href="mailto:hello@paige18.com">hello@paige18.com</a></div>
+      <div class="nav__foot"><span>Film · Web Series · Live Theatre · Children's Books</span><span>Vancouver, B.C.</span></div>
     </nav>
-    <button class="menu-btn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><em class="menu-btn__label">Menu</em><i class="menu-btn__icon"><span></span><span></span></i></button>
+    <div class="header__right">
+      <div class="logo-switch" role="group" aria-label="Logo concept">
+        <span>Logo</span>
+        <button data-pick="a" aria-pressed="true">A</button>
+        <button data-pick="b" aria-pressed="false">B</button>
+      </div>
+      <button class="menu-btn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><em class="menu-btn__label">Menu</em><i class="menu-btn__icon"><span></span><span></span></i></button>
+    </div>
   </header>
 
   <main id="main">
@@ -43,27 +55,24 @@
     <div class="footer__grid">
       <div class="footer__col">
         <h3 class="eyebrow">Studio</h3>
-        <address>PAIGE 18 Production<br>000 Placeholder Street<br>Vancouver, BC V6B 0A0<br>Canada</address>
+        <address>Paige 18 Productions<br>Vancouver, B.C.<br>Canada</address>
       </div>
       <div class="footer__col">
         <h3 class="eyebrow">Contact</h3>
         <ul>
-          <li><a href="mailto:hello@paige18.com">hello@paige18.com</a></li>
-          <li><a href="tel:+16040000000">+1 (604) 000-0000</a></li>
+          <li><a href="mailto:hello@paige18productions.ca">hello@paige18productions.ca</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h3 class="eyebrow">Follow</h3>
         <ul>
+          <li><a href="#" rel="noopener">Facebook</a></li>
           <li><a href="#" rel="noopener">Instagram</a></li>
-          <li><a href="#" rel="noopener">Vimeo</a></li>
-          <li><a href="#" rel="noopener">YouTube</a></li>
-          <li><a href="#" rel="noopener">IMDb</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h3 class="eyebrow">Newsletter</h3>
-        <p style="margin:0 0 6px">Premieres, auditions and behind-the-scenes — a few times a year.</p>
+        <p style="margin:0 0 6px">News on what we're producing, a few times a year.</p>
         <form class="newsletter" novalidate>
           <label class="sr-only" for="nl-email">Email</label>
           <input id="nl-email" type="email" placeholder="Your email" required>
@@ -71,32 +80,16 @@
         </form>
       </div>
     </div>
-    <div class="footer__wordmark"><img src="assets/img/logo/mark-outline.png" alt="PAIGE 18 Production" width="531" height="225" loading="lazy"></div>
+    <div class="footer__wordmark">
+      <img class="lg-a" src="assets/img/logo/concepts/logo-a.png" alt="Paige 18 Productions" width="985" height="750" loading="lazy">
+      <img class="lg-b" src="assets/img/logo/concepts/logo-b.png" alt="Paige 18 Productions" width="985" height="963" loading="lazy">
+    </div>
     <div class="footer__bar">
-      <span>© <span id="year">2026</span> PAIGE 18 Production. All rights reserved.</span>
-      <span>Film · Theatre · Series — Vancouver, BC</span>
+      <span>© <span id="year">2026</span> Paige 18 Productions. All rights reserved.</span>
+      <span>Film · Web Series · Live Theatre · Children's Books — Vancouver, B.C.</span>
     </div>
   </footer>
 
-  <!-- Laurel branch symbol -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="laurel-l" viewBox="0 0 240 120">
-      <g fill="currentColor">
-        <path d="M58 112 C 26 96, 14 56, 34 12" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <ellipse cx="50" cy="104" rx="3.6" ry="9" transform="rotate(-60 50 104)"/>
-        <ellipse cx="38" cy="94" rx="3.6" ry="9" transform="rotate(-42 38 94)"/>
-        <ellipse cx="28" cy="80" rx="3.6" ry="9" transform="rotate(-28 28 80)"/>
-        <ellipse cx="22" cy="64" rx="3.6" ry="9" transform="rotate(-12 22 64)"/>
-        <ellipse cx="22" cy="47" rx="3.6" ry="9" transform="rotate(4 22 47)"/>
-        <ellipse cx="26" cy="31" rx="3.6" ry="9" transform="rotate(18 26 31)"/>
-        <ellipse cx="33" cy="16" rx="3.2" ry="8" transform="rotate(30 33 16)"/>
-        <ellipse cx="46" cy="92" rx="3" ry="7.5" transform="rotate(30 46 92)"/>
-        <ellipse cx="36" cy="76" rx="3" ry="7.5" transform="rotate(40 36 76)"/>
-        <ellipse cx="32" cy="58" rx="3" ry="7.5" transform="rotate(52 32 58)"/>
-        <ellipse cx="33" cy="40" rx="3" ry="7.5" transform="rotate(64 33 40)"/>
-      </g>
-    </symbol>
-  </svg>
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>

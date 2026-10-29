@@ -1,68 +1,99 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-logo="a">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PAIGE 18 Production — Film, Theatre & Series · Vancouver</title>
-  <meta name="description" content="PAIGE 18 Production is an independent film, theatre and web series company based in Vancouver, BC.">
-  <link rel="icon" type="image/png" href="assets/img/logo/favicon.png">
-  <link rel="apple-touch-icon" href="assets/img/logo/favicon.png">
+  <title>Paige 18 Productions — Film, Web Series, Live Theatre &amp; Children's Books</title>
+  <meta name="description" content="Paige 18 Productions is a boutique production company in Vancouver, B.C., founded by Canadian actress, writer, producer and director Rhonda Dent.">
+  <script>try{var l=localStorage.getItem("paige18-logo");if(l==="a"||l==="b")document.documentElement.setAttribute("data-logo",l)}catch(e){}</script>
+  <link rel="icon" type="image/png" href="assets/img/logo/concepts/favicon-a.png">
+  <link rel="apple-touch-icon" href="assets/img/logo/concepts/favicon-a.png">
   <meta name="theme-color" content="#f3efea">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Jost:wght@200;400&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Jost:wght@200;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
   <a class="sr-only" href="#main">Skip to content</a>
 
+  <!-- ============ Entry: choose a logo concept ============ -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+    <div class="intro__head">
+      <span class="eyebrow">Paige 18 Productions · Website concept 01</span>
+      <h1 class="intro__title" id="intro-title">Choose a logo to preview</h1>
+      <p class="intro__note">You can switch logos any time with the A / B toggle at the top of the page.</p>
+    </div>
+    <div class="intro__options">
+      <button class="intro__card" data-pick="a" aria-pressed="false">
+        <img src="assets/img/logo/concepts/logo-a.png" alt="Logo A: serif P18 with a hand-drawn poppy" width="985" height="750">
+        <span class="intro__label"><strong>Logo A</strong> Sketch poppy</span>
+      </button>
+      <button class="intro__card" data-pick="b" aria-pressed="false">
+        <img src="assets/img/logo/concepts/logo-b.png" alt="Logo B: serif P18 with a red poppy" width="985" height="963">
+        <span class="intro__label"><strong>Logo B</strong> Red poppy</span>
+      </button>
+    </div>
+  </div>
+
   <!-- ============ Header ============ -->
   <header class="site-header">
-    <a class="logo" href="index.html" aria-label="PAIGE 18 Production — home">
-      <img class="logo__img logo__img--red" src="assets/img/logo/wordmark.png" alt="PAIGE 18 Production" width="452" height="193">
-      <img class="logo__img logo__img--white" src="assets/img/logo/wordmark-white.png" alt="" width="452" height="193">
+    <a class="logo" href="index.html" aria-label="Paige 18 Productions — home">
+      <img class="logo__img logo__img--red lg-a" src="assets/img/logo/concepts/logo-a-mark.png" alt="Paige 18 Productions" width="488" height="514">
+      <img class="logo__img logo__img--white lg-a" src="assets/img/logo/concepts/logo-a-mark-white.png" alt="" width="488" height="514">
+      <img class="logo__img logo__img--red lg-b" src="assets/img/logo/concepts/logo-b-mark.png" alt="Paige 18 Productions" width="769" height="754">
+      <img class="logo__img logo__img--white lg-b" src="assets/img/logo/concepts/logo-b-mark-white.png" alt="" width="769" height="754">
     </a>
     <nav class="nav" id="nav" aria-label="Main">
-      <img class="nav__mark" src="assets/img/logo/mark-vertical-white.png" alt="" width="225" height="531">
+      <div class="nav__mark">
+        <img class="lg-a" src="assets/img/logo/concepts/logo-a-white.png" alt="" width="985" height="750">
+        <img class="lg-b" src="assets/img/logo/concepts/logo-b-white.png" alt="" width="985" height="963">
+      </div>
       <div class="nav__links">
         <a href="#works">Works</a>
         <a href="about.html">About</a>
-        <a href="#press">Press</a>
-        <a href="#people">People</a>
+        <a href="#founder">Founder</a>
         <a href="#contact">Contact</a>
       </div>
-      <div class="nav__foot"><span>Film · Theatre · Series</span><span>Vancouver, BC</span><a href="mailto:hello@paige18.com">hello@paige18.com</a></div>
+      <div class="nav__foot"><span>Film · Web Series · Live Theatre · Children's Books</span><span>Vancouver, B.C.</span></div>
     </nav>
-    <button class="menu-btn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><em class="menu-btn__label">Menu</em><i class="menu-btn__icon"><span></span><span></span></i></button>
+    <div class="header__right">
+      <div class="logo-switch" role="group" aria-label="Logo concept">
+        <span>Logo</span>
+        <button data-pick="a" aria-pressed="true">A</button>
+        <button data-pick="b" aria-pressed="false">B</button>
+      </div>
+      <button class="menu-btn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><em class="menu-btn__label">Menu</em><i class="menu-btn__icon"><span></span><span></span></i></button>
+    </div>
   </header>
 
   <main id="main">
 
     <!-- ============ 1. Hero ============ -->
-    <section class="hero" aria-label="Featured trailer">
+    <section class="hero" aria-label="Featured reel">
       <div class="hero__media">
-        <div class="ph ph--dark" data-label="Video · Featured trailer · 16:9 loop"><img src="assets/img/reel.jpg" alt="" onerror="this.remove()"><span class="ph__mark">TRAILER</span></div>
+        <div class="ph ph--dark" data-label="Video · Featured reel · 16:9 loop"><img src="assets/img/reel.jpg" alt="" onerror="this.remove()"><span class="ph__mark">REEL</span></div>
         <!-- Hero reel: muted loop. For a YouTube background instead, use <div class="hero__yt" data-youtube="VIDEO_ID"></div> -->
         <video class="hero__video" src="assets/video/hero-reel.mp4" poster="assets/img/reel.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
       </div>
 
       <div class="hero__inner">
-
         <div>
+          <span class="hero__eyebrow eyebrow">Film | Web Series | Live Theatre | Children's Books</span>
           <div class="hero__bottom">
-            <h1 class="hero__title display">Made in<br>Vancouver.</h1>
+            <h1 class="hero__title display">Heartfelt<br>stories.</h1>
             <div class="hero__side">
-              <p>An independent production company for film, theatre and web series — telling small, honest stories for stage and screen.</p>
+              <p>A boutique production company founded by Canadian actress, writer, producer and director Rhonda Dent.</p>
               <div class="hero__actions">
-                <a class="btn btn--light" href="https://www.youtube.com/watch?v=R6MlUcmOul8" target="_blank" rel="noopener">▶&nbsp; Watch Trailer</a>
-                <a class="btn btn--light" href="#works">View Works <span class="arrow">→</span></a>
+                <a class="btn btn--light" href="https://www.youtube.com/watch?v=R6MlUcmOul8" target="_blank" rel="noopener">▶&nbsp; Watch Reel</a>
+                <a class="btn btn--light" href="#works">See what we're producing <span class="arrow">→</span></a>
               </div>
             </div>
           </div>
           <div class="hero__meta">
-            <span><span class="sound-dot"></span>Now playing — Salt &amp; Cedar (2025)</span>
-            <span>49.2827° N, 123.1207° W</span>
+            <span><span class="sound-dot"></span>Now producing — SongBird</span>
+            <span>Boutique film company · Vancouver, B.C.</span>
             <span>Scroll ↓</span>
           </div>
         </div>
@@ -71,8 +102,8 @@
 
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Film</span><span>Theatre</span><span>Web Series</span><span>Development</span><span>Co-production</span><span>Vancouver, BC</span>
-        <span>Film</span><span>Theatre</span><span>Web Series</span><span>Development</span><span>Co-production</span><span>Vancouver, BC</span>
+        <span>Film</span><span>Web Series</span><span>Live Theatre</span><span>Children's Books</span><span>Vancouver, B.C.</span>
+        <span>Film</span><span>Web Series</span><span>Live Theatre</span><span>Children's Books</span><span>Vancouver, B.C.</span>
       </div>
     </div>
 
@@ -80,39 +111,39 @@
     <section class="section about" id="about">
       <div class="section__head">
         <h2 class="section__script reveal">About us</h2>
-        <p class="section__aside reveal">Every small story deserves a big stage — and a little patience.</p>
+        <p class="section__aside reveal">Entertain, inspire and connect audiences.</p>
       </div>
 
       <div class="about__grid reveal">
         <div class="about__cell about__cell--red">
-          <span class="eyebrow">(01) Philosophy</span>
-          <p class="about__lede">We make intimate, character-driven work rooted in the Pacific Northwest. Stage and screen are one practice to us — we develop slowly, cast boldly, and build every project with the people who will live inside it.</p>
+          <span class="eyebrow">Paige 18 Productions</span>
+          <p class="about__lede">A boutique production company dedicated to storytelling across film, television and theatre.</p>
         </div>
         <div class="about__cell">
-          <span class="eyebrow red">(02)</span>
+          <span class="eyebrow red">Experience</span>
           <div>
-            <div class="stat__value" data-count="18">18</div>
-            <div class="stat__label">Productions<br>across stage &amp; screen</div>
+            <div class="stat__value" data-count="25" data-suffix="+">25+</div>
+            <div class="stat__label">Years in film, television<br>&amp; theatre</div>
           </div>
         </div>
         <div class="about__cell">
-          <span class="eyebrow red">(03)</span>
+          <span class="eyebrow red">Recognition</span>
           <div>
-            <div class="stat__value" data-count="120" data-suffix="K">120K</div>
-            <div class="stat__label">Audience members<br>in seats &amp; online</div>
+            <div class="stat__value" data-count="6">6</div>
+            <div class="stat__label">Leo Award<br>nominations</div>
           </div>
         </div>
         <div class="about__cell">
-          <span class="eyebrow red">(04)</span>
+          <span class="eyebrow red">Disciplines</span>
           <div>
-            <div class="stat__value" data-count="24">24</div>
-            <div class="stat__label">Awards &amp;<br>festival selections</div>
+            <div class="stat__value" data-count="4">4</div>
+            <div class="stat__label">Film, web series, live theatre<br>&amp; children's books</div>
           </div>
         </div>
       </div>
 
       <div class="about__foot">
-        <p>Founded in 2020 on unceded Coast Salish territories — the lands of the xʷməθkʷəy̓əm, Sḵwx̱wú7mesh and səlilwətaɬ Nations.</p>
+        <p>Paige 18 Productions develops and produces original projects that entertain, inspire and connect audiences. With a passion for authentic, heartfelt stories and creative collaboration, the company brings ideas to life through independent filmmaking, live theatre and innovative visual storytelling.</p>
         <a class="link-arrow" href="about.html">Learn more <span class="arrow">→</span></a>
       </div>
     </section>
@@ -120,94 +151,60 @@
     <!-- ============ 3. Works ============ -->
     <section class="section works" id="works">
       <div class="works__head">
-        <h2 class="works__title display reveal">Works<sup id="works-total">12</sup></h2>
+        <h2 class="works__title display reveal">Works<sup id="works-total">04</sup></h2>
         <div class="filters" role="group" aria-label="Filter works">
           <button class="filter is-active" data-filter="all" aria-pressed="true">All<span class="count"></span></button>
-          <button class="filter" data-filter="theatre" aria-pressed="false">Theatre<span class="count"></span></button>
-          <button class="filter" data-filter="film" aria-pressed="false">Film<span class="count"></span></button>
-          <button class="filter" data-filter="series" aria-pressed="false">Series<span class="count"></span></button>
+          <button class="filter" data-filter="short" aria-pressed="false">Short Film<span class="count"></span></button>
+          <button class="filter" data-filter="feature" aria-pressed="false">Feature Film<span class="count"></span></button>
         </div>
       </div>
       <div class="works__grid" id="works-grid"></div>
     </section>
 
-    <!-- ============ 4. Press / Awards ============ -->
-    <section class="section press" id="press">
-      <svg class="press__flower" viewBox="0 0 400 400" aria-hidden="true">
-        <defs>
-          <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
-          <radialGradient id="petal" cx="50%" cy="80%" r="80%">
-            <stop offset="0" stop-color="#3f6276" stop-opacity=".85"/>
-            <stop offset=".6" stop-color="#7c99ab" stop-opacity=".45"/>
-            <stop offset="1" stop-color="#cdd8e0" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <g filter="url(#soft)">
-          <ellipse cx="200" cy="130" rx="58" ry="110" fill="url(#petal)" transform="rotate(-28 200 200)"/>
-          <ellipse cx="200" cy="130" rx="58" ry="110" fill="url(#petal)" transform="rotate(26 200 200)"/>
-          <ellipse cx="200" cy="140" rx="50" ry="96" fill="url(#petal)" transform="rotate(-80 200 200)"/>
-          <ellipse cx="200" cy="140" rx="50" ry="96" fill="url(#petal)" transform="rotate(78 200 200)"/>
-          <path d="M200 210 C 196 270, 214 320, 196 400" stroke="#4d6d80" stroke-width="5" fill="none" opacity=".5"/>
-        </g>
-      </svg>
-
+    <!-- ============ 4. Recognition ============ -->
+    <section class="section press" id="recognition">
       <div class="section__head">
-        <h2 class="section__script reveal">Press &amp; awards</h2>
-        <span class="section__index" style="justify-self:end">(24)</span>
+        <h2 class="section__script reveal">Recognition</h2>
+        <span class="section__index" style="justify-self:end">(06)</span>
       </div>
 
       <div class="laurels reveal">
-        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Official Selection — Festival Name 2025"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">OFFICIAL SELECTION</text><text x="120" y="70" text-anchor="middle" font-size="15" font-weight="800" fill="currentColor">FESTIVAL NAME</text><text x="120" y="88" text-anchor="middle" font-size="9" font-weight="500" fill="currentColor">2025</text></svg></div>
-        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Winner — Best Short Drama"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">WINNER</text><text x="120" y="68" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">BEST SHORT</text><text x="120" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">DRAMA</text></svg></div>
-        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Official Selection — Web Series Festival 2024"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">OFFICIAL SELECTION</text><text x="120" y="68" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">WEB SERIES</text><text x="120" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">FESTIVAL 2024</text></svg></div>
-        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Nominee — Outstanding Production"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">NOMINEE</text><text x="120" y="68" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">OUTSTANDING</text><text x="120" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">PRODUCTION</text></svg></div>
+        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Six-time Leo Award nominee"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">SIX-TIME</text><text x="120" y="68" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">LEO AWARD</text><text x="120" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">NOMINEE</text></svg></div>
+        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Leading roles in Lifetime Movies of the Week"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">LEADING ROLES</text><text x="120" y="68" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">LIFETIME</text><text x="120" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">MOVIES OF THE WEEK</text></svg></div>
+        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="University College of the Fraser Valley theatre program"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">THEATRE PROGRAM</text><text x="120" y="68" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">UNIVERSITY COLLEGE</text><text x="120" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">OF THE FRASER VALLEY</text></svg></div>
+        <div class="laurel"><svg viewBox="0 0 240 120" role="img" aria-label="Langara College Film Arts Directing program"><use href="#laurel-l"/><use href="#laurel-l" transform="translate(240 0) scale(-1 1)"/><text x="120" y="48" text-anchor="middle" font-size="8" letter-spacing="1.6" font-weight="600" fill="currentColor">FILM ARTS · DIRECTING</text><text x="120" y="68" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">LANGARA</text><text x="120" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor">COLLEGE</text></svg></div>
       </div>
 
       <div class="quotes">
-        <h3 class="quotes__big display reveal">Every small story<br>— is a whole<br>world.</h3>
+        <h3 class="quotes__big display reveal">Authentic,<br>heartfelt<br>stories.</h3>
         <ul class="quotes__list reveal">
-          <li class="quote"><p>“A quietly devastating debut. Salt &amp; Cedar lingers like coastal fog.”</p><cite>— Publication Name · Film review</cite></li>
-          <li class="quote"><p>“The most inventive use of a small stage this season.”</p><cite>— Arts Magazine · The Quiet Hours</cite></li>
-          <li class="quote"><p>“Sharp, funny and unmistakably Vancouver.”</p><cite>— City Weekly · Commercial Drive</cite></li>
-          <li class="quote"><p>“A company to watch on both sides of the curtain.”</p><cite>— Culture Desk · Profile</cite></li>
+          <li class="quote"><p>Independent filmmaking</p><cite>Short and feature films</cite></li>
+          <li class="quote"><p>Live theatre</p><cite>Original work for the stage</cite></li>
+          <li class="quote"><p>Innovative visual storytelling</p><cite>Film, television &amp; web series</cite></li>
+          <li class="quote"><p>Children's books</p><cite>Stories for young readers</cite></li>
         </ul>
       </div>
 
-      <p class="press__tagline display">Every small step — a move toward change.</p>
+      <p class="press__tagline display">Championing meaningful narratives and the power of creativity.</p>
     </section>
 
-    <!-- ============ 5. People ============ -->
-    <section class="section people" id="people">
+    <!-- ============ 5. Founder ============ -->
+    <section class="section founder" id="founder">
       <div class="section__head">
-        <h2 class="section__script reveal">The people</h2>
-        <p class="section__aside reveal">Directors, writers &amp; producers who build the work together.</p>
+        <h2 class="section__script reveal">Founder</h2>
+        <p class="section__aside reveal">Actress · Writer · Producer · Director · Children's author · Photographer</p>
       </div>
 
-      <div class="people__grid">
-        <article class="person reveal">
-          <div class="person__img ph ph--stone" data-label="Portrait · 4:5"><img src="assets/img/people-mara.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="ph__mark">IMG</span></div>
-          <p class="person__role eyebrow">Founder · Artistic Director</p>
-          <h3 class="person__name">Mara<br>Ellison</h3>
-          <p class="person__bio">Theatre director turned filmmaker. Leads the company's creative slate across stage and screen.</p>
-        </article>
-        <article class="person reveal">
-          <div class="person__img ph ph--sand" data-label="Portrait · 4:5"><img src="assets/img/people-jordan.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="ph__mark">IMG</span></div>
-          <p class="person__role eyebrow">Executive Producer</p>
-          <h3 class="person__name">Jordan<br>Vale</h3>
-          <p class="person__bio">Oversees financing, co-productions and distribution for every PAIGE 18 project.</p>
-        </article>
-        <article class="person reveal">
-          <div class="person__img ph ph--blue" data-label="Portrait · 4:5"><img src="assets/img/people-theo.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="ph__mark">IMG</span></div>
-          <p class="person__role eyebrow">Head Writer</p>
-          <h3 class="person__name">Theo<br>Park</h3>
-          <p class="person__bio">Screenwriter and series creator. Runs the company's development room for new voices.</p>
-        </article>
-        <article class="person reveal">
-          <div class="person__img ph ph--ash" data-label="Portrait · 4:5"><img src="assets/img/people-ana.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="ph__mark">IMG</span></div>
-          <p class="person__role eyebrow">Director · Series</p>
-          <h3 class="person__name">Ana<br>Ruiz</h3>
-          <p class="person__bio">Short-form specialist with a documentary eye. Directs our web series slate.</p>
-        </article>
+      <div class="founder__grid">
+        <div class="founder__img ph ph--stone reveal" data-label="Portrait · Rhonda Dent"><img src="assets/img/rhonda-dent.jpg" alt="Rhonda Dent" loading="lazy" onerror="this.remove()"><span class="ph__mark">IMG</span></div>
+        <div class="founder__body reveal">
+          <p class="eyebrow red">Hi, I'm Rhonda!</p>
+          <h3 class="founder__name">Rhonda<br>Dent</h3>
+          <p class="founder__lede">A six-time Leo-nominated Canadian actress, writer, producer, director, children's author and photographer with over 25 years of professional experience.</p>
+          <p>She has appeared in numerous film and television productions, including leading roles in Lifetime Movies of the Week. A graduate of the University College of the Fraser Valley's theatre program and Langara College's Film Arts Directing program, Rhonda is the founder of Paige 18 Productions, where she develops original film, television and theatre projects.</p>
+          <p>Passionate about meaningful storytelling, she is currently developing <em>Footprints</em>, a feature-length Sasquatch adventure mystery set in the Pacific Northwest.</p>
+          <a class="link-arrow red" href="about.html">About Rhonda <span class="arrow">→</span></a>
+        </div>
       </div>
     </section>
 
@@ -215,8 +212,8 @@
     <section class="contact" id="contact">
       <div class="contact__left">
         <div>
-          <span class="eyebrow red">(06) Work with us</span>
-          <h2 class="contact__script" style="margin-top:18px">The first step is just one message.</h2>
+          <span class="eyebrow red">Work with us</span>
+          <h2 class="contact__script" style="margin-top:18px">Let's tell a story together.</h2>
         </div>
 
         <div>
@@ -251,7 +248,7 @@
             <div class="field"><label for="f-extra" id="f-extra-label">Company / Fund</label><input id="f-extra" name="extra" type="text"></div>
             <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4" required></textarea></div>
             <div class="form__foot">
-              <p class="form__note">We read everything. Replies within 3–5 working days.</p>
+              <p class="form__note">We read every message and reply as soon as we can.</p>
               <button class="btn btn--red" type="submit">Send message <span class="arrow">→</span></button>
             </div>
             <p class="form__status" role="status" aria-live="polite"></p>
@@ -260,17 +257,22 @@
       </div>
 
       <div class="contact__right">
-        <div class="contact__right-top"><span>Vancouver, BC</span><img src="assets/img/logo/mark-outline-white.png" alt="" width="531" height="225" style="width:96px;height:auto"></div>
+        <div class="contact__right-top">
+          <span>Vancouver, B.C.</span>
+          <span class="contact__mark">
+            <img class="lg-a" src="assets/img/logo/concepts/logo-a-mark-white.png" alt="" width="488" height="514">
+            <img class="lg-b" src="assets/img/logo/concepts/logo-b-mark-white.png" alt="" width="769" height="754">
+          </span>
+        </div>
 
         <div class="contact__visual">
           <div class="ph ph--stone" data-label="IMG · 3:4"><img src="assets/img/contact.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="ph__mark">IMG</span></div>
-          <p class="contact__email display"><a href="mailto:hello@paige18.com">hello@<br>paige18.com</a></p>
+          <p class="contact__email display"><a href="mailto:hello@paige18productions.ca">Say<br>hello.</a></p>
         </div>
 
         <div class="contact__lines">
-          <a href="mailto:production@paige18.com">production@paige18.com</a>
-          <a href="mailto:casting@paige18.com">casting@paige18.com</a>
-          <a href="tel:+16040000000">+1 (604) 000-0000</a>
+          <a href="mailto:hello@paige18productions.ca">hello@paige18productions.ca</a>
+          <span>Boutique film company based in Vancouver, B.C.</span>
         </div>
       </div>
     </section>
@@ -282,27 +284,24 @@
     <div class="footer__grid">
       <div class="footer__col">
         <h3 class="eyebrow">Studio</h3>
-        <address>PAIGE 18 Production<br>000 Placeholder Street<br>Vancouver, BC V6B 0A0<br>Canada</address>
+        <address>Paige 18 Productions<br>Vancouver, B.C.<br>Canada</address>
       </div>
       <div class="footer__col">
         <h3 class="eyebrow">Contact</h3>
         <ul>
-          <li><a href="mailto:hello@paige18.com">hello@paige18.com</a></li>
-          <li><a href="tel:+16040000000">+1 (604) 000-0000</a></li>
+          <li><a href="mailto:hello@paige18productions.ca">hello@paige18productions.ca</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h3 class="eyebrow">Follow</h3>
         <ul>
+          <li><a href="#" rel="noopener">Facebook</a></li>
           <li><a href="#" rel="noopener">Instagram</a></li>
-          <li><a href="#" rel="noopener">Vimeo</a></li>
-          <li><a href="#" rel="noopener">YouTube</a></li>
-          <li><a href="#" rel="noopener">IMDb</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h3 class="eyebrow">Newsletter</h3>
-        <p style="margin:0 0 6px">Premieres, auditions and behind-the-scenes — a few times a year.</p>
+        <p style="margin:0 0 6px">News on what we're producing, a few times a year.</p>
         <form class="newsletter" novalidate>
           <label class="sr-only" for="nl-email">Email</label>
           <input id="nl-email" type="email" placeholder="Your email" required>
@@ -310,12 +309,16 @@
         </form>
       </div>
     </div>
-    <div class="footer__wordmark"><img src="assets/img/logo/mark-outline.png" alt="PAIGE 18 Production" width="531" height="225" loading="lazy"></div>
+    <div class="footer__wordmark">
+      <img class="lg-a" src="assets/img/logo/concepts/logo-a.png" alt="Paige 18 Productions" width="985" height="750" loading="lazy">
+      <img class="lg-b" src="assets/img/logo/concepts/logo-b.png" alt="Paige 18 Productions" width="985" height="963" loading="lazy">
+    </div>
     <div class="footer__bar">
-      <span>© <span id="year">2026</span> PAIGE 18 Production. All rights reserved.</span>
-      <span>Film · Theatre · Series — Vancouver, BC</span>
+      <span>© <span id="year">2026</span> Paige 18 Productions. All rights reserved.</span>
+      <span>Film · Web Series · Live Theatre · Children's Books — Vancouver, B.C.</span>
     </div>
   </footer>
+
 
   <!-- Laurel branch symbol -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
