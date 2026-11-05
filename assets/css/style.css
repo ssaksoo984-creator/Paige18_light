@@ -774,8 +774,7 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
 
 .quotes__big {
   font-size: clamp(36px, 5vw, 76px);
-  color: var(--paper);
-  text-shadow: 0 0 1px rgba(0,0,0,0.02);
+  color: var(--ink);
 }
 
 .quotes__list { list-style: none; margin: 0; padding: 0; }
