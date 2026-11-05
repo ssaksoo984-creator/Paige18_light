@@ -236,6 +236,19 @@
       "</nav>";
   }
 
+  /* ---------- Contact slideshow (cross-fade) ---------- */
+
+  $$(".slideshow").forEach(function (show) {
+    var slides = $$("img", show);
+    if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var i = 0;
+    setInterval(function () {
+      slides[i].classList.remove("is-active");
+      i = (i + 1) % slides.length;
+      slides[i].classList.add("is-active");
+    }, 3800);
+  });
+
   /* ---------- Stat counters ---------- */
 
   function animateCount(el) {

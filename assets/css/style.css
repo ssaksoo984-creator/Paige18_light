@@ -996,6 +996,21 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
   aspect-ratio: 3 / 4;
 }
 
+/* Cross-fading slideshow of the films and founder */
+.slideshow > img {
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.4s var(--ease), transform 6s linear;
+}
+
+.slideshow > img.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.slideshow::after { display: none; }
+
 .contact__email {
   position: absolute;
   right: 0;
