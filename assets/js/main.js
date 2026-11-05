@@ -53,9 +53,12 @@
         setLogo(b.getAttribute("data-pick"));
         intro.classList.add("is-leaving");
         document.body.classList.remove("intro-open");
+        setTimeout(function () { document.body.classList.add("hero-in"); }, 250);
         setTimeout(function () { intro.hidden = true; }, 700);
       });
     });
+  } else {
+    requestAnimationFrame(function () { document.body.classList.add("hero-in"); });
   }
 
   /* ---------- Header ---------- */
@@ -266,9 +269,92 @@
     requestAnimationFrame(step);
   }
 
-  /* ---------- Reveal on scroll ---------- */
+  /* ---------- Interactions ---------- */
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  // Section titles: letters rise one by one when the title scrolls in
+  $$(".section__script, .contact__script").forEach(function (el) {
+    var i = 0;
+    (function split(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+        if (child.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach(function (word) {
+            if (!word) return;
+            if (/^\s+$/.test(word)) { frag.appendChild(document.createTextNode(word)); return; }
+            var w = document.createElement("span");
+            w.className = "word";
+            word.split("").forEach(function (ch) {
+              var c = document.createElement("span");
+              c.className = "char";
+              c.style.setProperty("--i", i++);
+              c.textContent = ch;
+              w.appendChild(c);
+            });
+            frag.appendChild(w);
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === 1) {
+          split(child);
+        }
+      });
+    })(el);
+    el.setAttribute("aria-label", el.textContent);
+  });
+
+  if (!reduce && finePointer) {
+    // Hero image drifts gently against the cursor
+    var heroMedia = $(".hero__media");
+    var heroEl = $(".hero");
+    if (heroMedia && heroEl) {
+      heroEl.addEventListener("mousemove", function (e) {
+        var x = e.clientX / window.innerWidth - 0.5;
+        var y = e.clientY / window.innerHeight - 0.5;
+        heroMedia.style.transform = "translate3d(" + (-x * 18) + "px," + (-y * 12) + "px,0) scale(1.05)";
+      });
+      heroEl.addEventListener("mouseleave", function () { heroMedia.style.transform = ""; });
+    }
+
+    // Posters tilt toward the cursor, with a "View" chip that follows it
+    var chip = document.createElement("div");
+    chip.className = "cursor-chip";
+    chip.textContent = "View";
+    document.body.appendChild(chip);
+    var moveChip = function (e) { chip.style.transform = "translate3d(" + e.clientX + "px," + e.clientY + "px,0) translate(-50%,-50%)"; };
+
+    $$(".work").forEach(function (card) {
+      var layers = [$(".work__poster", card), $(".work__hover", card)];
+      card.addEventListener("mousemove", function (e) {
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5;
+        var y = (e.clientY - r.top) / r.height - 0.5;
+        var t = "perspective(900px) rotateY(" + (x * 10) + "deg) rotateX(" + (-y * 10) + "deg) scale(1.02)";
+        layers.forEach(function (l) { if (l) l.style.transform = t; });
+        moveChip(e);
+      });
+      card.addEventListener("mouseenter", function (e) { moveChip(e); chip.classList.add("is-on"); });
+      card.addEventListener("mouseleave", function () {
+        layers.forEach(function (l) { if (l) l.style.transform = ""; });
+        chip.classList.remove("is-on");
+      });
+    });
+
+    // Buttons lean toward the cursor
+    $$(".btn, .menu-btn, .link-arrow").forEach(function (btn) {
+      btn.addEventListener("mousemove", function (e) {
+        var r = btn.getBoundingClientRect();
+        var x = e.clientX - (r.left + r.width / 2);
+        var y = e.clientY - (r.top + r.height / 2);
+        btn.style.transform = "translate(" + x * 0.18 + "px," + y * 0.28 + "px)";
+      });
+      btn.addEventListener("mouseleave", function () { btn.style.transform = ""; });
+    });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+
   if ("IntersectionObserver" in window && !reduce) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
