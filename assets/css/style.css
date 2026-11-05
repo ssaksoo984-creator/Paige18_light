@@ -633,7 +633,7 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
 
 .works__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--line);
 }
 
@@ -702,7 +702,8 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
 
 .work__meta {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "name year" "type type";
   gap: 2px 12px;
   font-size: 12px;
 }
@@ -715,8 +716,9 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
   color: var(--red);
 }
 
-.work__year { color: var(--red); font-feature-settings: "tnum"; }
-.work__type { color: var(--ink-soft); }
+.work__name { grid-area: name; min-width: 0; }
+.work__year { grid-area: year; color: var(--red); font-feature-settings: "tnum"; white-space: nowrap; }
+.work__type { grid-area: type; color: var(--ink-soft); }
 
 .work__link { position: absolute; inset: 0; z-index: 6; }
 .work__link:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; }
@@ -1425,7 +1427,7 @@ body.menu-open .logo-switch { opacity: 0; pointer-events: none; }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1080px) {
-  .works__grid, .people__grid { grid-template-columns: repeat(3, 1fr); }
+  .people__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .person:nth-child(3) { border-right: 0; }
   .person:nth-child(4) { display: none; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
@@ -1471,7 +1473,8 @@ body.menu-open .logo-switch { opacity: 0; pointer-events: none; }
   .about__cell:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .about__foot { flex-direction: column; align-items: flex-start; }
 
-  .works__grid { grid-template-columns: 1fr 1fr; }
+  .works__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .work__meta { grid-template-columns: minmax(0, 1fr); grid-template-areas: "name" "type" "year"; }
 
   .laurels { grid-template-columns: 1fr 1fr; }
   .laurel:nth-child(3) { border-left: 0; }
