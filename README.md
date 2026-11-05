@@ -1,5 +1,7 @@
 # Paige 18 Productions — Website (Concept 01 · Light)
 
+Live preview: https://ssaksoo984-creator.github.io/Paige18_light/
+
 Static site for Paige 18 Productions, a boutique film, web series, live theatre and children's book company in Vancouver, B.C.
 No build step — open `index.html` or serve the folder (`python3 -m http.server`).
 
