@@ -7,6 +7,26 @@
 
 window.PAIGE_WORKS = [
   {
+    id: "the-officiant",
+    title: "The Officiant",
+    type: "short",
+    year: "",
+    runtime: "Film",
+    tone: "blue",
+    logline: "Marrying everyone, dating no one. Ryan makes a living celebrating happily-ever-afters, but his own love life is anything but picture-perfect.",
+    synopsis: "A hopeless romantic with a wandering eye, a sharp tongue and a talent for disastrous dates, Ryan is determined to find Mr. Right. But between officiating weddings, dodging awkward encounters and falling for all the wrong men, finding love might just be his toughest job yet.",
+    credits: {
+      "Production": "Paige 18 Productions",
+      "Directed by": "Rhonda Dent",
+      "Produced by": "Rhonda Dent, Ryan Steele, Golanz Fakhari",
+      "Starring": "Ryan Steele",
+      "Cinematography": "Nicholas Tremblay"
+    },
+    status: "Paige 18 original",
+    poster: "assets/img/works/the-officiant.jpg",
+    preview: "", trailer: ""
+  },
+  {
     id: "songbird",
     title: "SongBird",
     type: "short",

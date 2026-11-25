@@ -633,7 +633,7 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
 
 .works__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   border-top: 1px solid var(--line);
 }
 
@@ -1596,3 +1596,5 @@ body.hero-in .hero__title .line > span { transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .hero__title .line > span, .char { transform: none !important; opacity: 1 !important; }
 }
+
+.work-hero .ph > img { object-position: 50% 22%; }
