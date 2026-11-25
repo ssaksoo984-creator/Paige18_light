@@ -1617,7 +1617,7 @@ body.hero-in .hero__title .line > span { transform: none; }
   content: "";
   position: absolute;
   inset: -60px;
-  background: url("../img/works/songbird-still.jpg") center 35% / cover no-repeat;
+  background: url("../img/stills/songbird-still-120.jpg") 38% 40% / cover no-repeat;
   filter: blur(28px) saturate(115%);
   pointer-events: none;
 }
