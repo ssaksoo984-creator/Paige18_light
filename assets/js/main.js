@@ -186,10 +186,6 @@
           '<span class="eyebrow">' + escapeHtml(w.status) + "</span>" +
         "</div>" +
       "</section>" +
-      '<section class="work-hero" style="margin-top:0">' +
-        media(w.still || w.poster, w.tone === "dark" || w.tone === "ash" ? w.tone : "dark", "Still · 16:9") +
-        (w.trailer ? '<a class="work-hero__play" href="' + escapeHtml(w.trailer) + '" target="_blank" rel="noopener"><span>Play</span></a>' : "") +
-      "</section>" +
       '<section class="work-detail">' +
         '<div>' + (w.poster ? '<img class="work-poster" src="' + escapeHtml(w.poster) + '" alt="' + escapeHtml(w.title) + ' poster">' : "") +
           '<span class="eyebrow red">Details</span><dl class="facts" style="margin-top:16px">' + facts + "</dl></div>" +
@@ -361,28 +357,53 @@
   });
   if (typeSelect) typeSelect.addEventListener("change", function () { setInquiry(typeSelect.value); });
 
-  // Front-end only — connect to a form service (Formspree, Netlify Forms, etc.)
+  // Messages are delivered by FormSubmit (formsubmit.co) to the address in
+  // the form's data-to attribute. The first message sends a one-time
+  // activation link to that inbox; after it is confirmed, messages arrive.
   var form = $("#contact-form");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var status = $(".form__status", form);
+      var button = $('button[type="submit"]', form);
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      status.textContent = "Thank you — we'll be in touch within a few working days.";
-      form.reset();
-      setInquiry("coproduction");
+
+      var to = form.getAttribute("data-to");
+      if (!to) {
+        status.textContent = "Messages aren't connected yet. Please email us directly for now.";
+        return;
+      }
+
+      var data = {
+        _subject: "Website inquiry — " + typeSelect.options[typeSelect.selectedIndex].text,
+        _template: "table",
+        _captcha: "false",
+        "Inquiry type": typeSelect.options[typeSelect.selectedIndex].text,
+        Name: form.name.value,
+        email: form.email.value
+      };
+      data[subjectLabel ? subjectLabel.textContent : "Details"] = form.extra.value;
+      data.Message = form.message.value;
+
+      button.disabled = true;
+      status.textContent = "Sending…";
+      fetch("https://formsubmit.co/ajax/" + encodeURIComponent(to), {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === "false") throw new Error(j.message); }); })
+        .then(function () {
+          status.textContent = "Thank you — your message has been sent. We'll be in touch soon.";
+          form.reset();
+          setInquiry("coproduction");
+        })
+        .catch(function () {
+          status.textContent = "Sorry, the message couldn't be sent. Please email us at " + to + ".";
+        })
+        .then(function () { button.disabled = false; });
     });
   }
-
-  $$(".newsletter").forEach(function (nl) {
-    nl.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var input = $("input", nl);
-      if (!input.checkValidity()) { input.reportValidity(); return; }
-      input.value = "";
-      input.placeholder = "Subscribed — thank you";
-    });
-  });
 
   var year = $("#year");
   if (year) year.textContent = new Date().getFullYear();

@@ -1037,7 +1037,7 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1.4fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border-bottom: 1px solid var(--line);
 }
 
@@ -1430,9 +1430,6 @@ body.menu-open .logo-switch { opacity: 0; pointer-events: none; }
   .people__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .person:nth-child(3) { border-right: 0; }
   .person:nth-child(4) { display: none; }
-  .footer__grid { grid-template-columns: 1fr 1fr; }
-  .footer__col:nth-child(2) { border-right: 0; }
-  .footer__col:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
 }
 
 @media (max-width: 860px) {
@@ -1612,44 +1609,41 @@ body.hero-in .hero__title .line > span { transform: none; }
 
 .work-hero .ph > img { object-position: 50% 22%; }
 
-/* ---------- Recognition: darkened still behind, blurred glass panel ---------- */
+/* ---------- Recognition: blurred still under a white haze ---------- */
 
-.press--photo {
-  background: #120d0b url("../img/works/songbird-still.jpg") center 35% / cover no-repeat;
-  color: var(--paper);
-}
+.press--photo { background: var(--bg); overflow: hidden; }
 
 .press--photo::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(12, 9, 8, 0.72), rgba(12, 9, 8, 0.82));
+  inset: -60px;
+  background: url("../img/works/songbird-still.jpg") center 35% / cover no-repeat;
+  filter: blur(28px) saturate(115%);
   pointer-events: none;
 }
 
-.press--photo > * { position: relative; }
-
-.press--photo .section__head,
-.press--photo .laurels,
-.press--photo .quotes,
-.press--photo .press__tagline {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(18px) saturate(120%);
-  -webkit-backdrop-filter: blur(18px) saturate(120%);
+.press--photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(243, 239, 234, 0.6);
+  pointer-events: none;
 }
 
-.press--photo .section__head { margin: clamp(48px, 7vw, 96px) var(--gutter) 0; padding-left: clamp(20px, 3vw, 40px); padding-right: clamp(20px, 3vw, 40px); padding-top: clamp(32px, 4vw, 56px); }
-.press--photo .laurels { margin: 0 var(--gutter); border-color: rgba(248, 245, 241, 0.25); }
-.press--photo .laurel { color: var(--paper); }
-.press--photo .laurel + .laurel { border-left-color: rgba(248, 245, 241, 0.25); }
-.press--photo .quotes { margin: 0 var(--gutter); padding-left: clamp(20px, 3vw, 40px); padding-right: clamp(20px, 3vw, 40px); }
-.press--photo .press__tagline { margin: 0 var(--gutter) clamp(48px, 7vw, 96px); padding: 0 clamp(20px, 3vw, 40px) clamp(28px, 4vw, 48px); }
-
-.press--photo .section__script,
-.press--photo .quotes__big,
-.press--photo .press__tagline,
-.press--photo .quote p { color: var(--paper); }
-.press--photo .section__aside { color: rgba(248, 245, 241, 0.8); }
-.press--photo .quote { border-color: rgba(248, 245, 241, 0.25); }
-.press--photo .quote cite { color: rgba(248, 245, 241, 0.65); }
+.press--photo > * { position: relative; z-index: 1; }
 .press--photo .press__flower { display: none; }
+.press--photo .quotes__big { color: var(--ink); }
+
+/* ---------- Paper grain across the light backgrounds ---------- */
+
+:root {
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2  0 0 0 0 0.16  0 0 0 0 0.14  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23g)' opacity='.35'/></svg>");
+}
+
+body,
+.site-footer,
+.contact__left,
+.marquee,
+.site-header.is-solid,
+.site-header--solid,
+.intro__card { background-image: var(--grain); }

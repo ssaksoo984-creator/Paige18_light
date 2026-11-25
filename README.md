@@ -21,4 +21,4 @@ No build step — open `index.html` or serve the folder (`python3 -m http.server
 ## Design tokens (`assets/css/style.css`)
 - Point red `#d01d29` (a shade darker than the logo red), background `#f3efea`, pale blue `#cdd8e0`
 - Type: Inter Tight (headlines and body)
-- Contact form & newsletter are front-end only — connect to Formspree / Netlify Forms etc.
+- Contact form sends through FormSubmit (formsubmit.co) to the address in `data-to` on `#contact-form` in `index.html`. Empty means not connected. The first message sends an activation link to that inbox.
