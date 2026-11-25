@@ -223,8 +223,8 @@ body.menu-open .site-header .logo__img--red { opacity: 0; }
   transition: opacity 0.45s var(--ease), visibility 0.45s;
 }
 
-.nav__mark { display: flex; align-items: center; }
-.nav__mark img { width: min(34vw, 440px); height: auto; }
+.nav__mark { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.nav__mark img { width: min(30vw, 400px); height: auto; }
 
 .nav__links { display: flex; flex-direction: column; gap: 2px; }
 
@@ -1154,7 +1154,7 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
 
 .founder__body .link-arrow { align-self: flex-start; margin-top: 8px; }
 
-.contact__mark img { height: 48px; width: auto; }
+.contact__mark { height: 38px; width: auto; }
 
 .laurels--six { grid-template-columns: repeat(6, 1fr); }
 .laurels--six .laurel { padding: 22px 6px; }
@@ -1445,6 +1445,7 @@ body.menu-open .logo-switch { opacity: 0; pointer-events: none; }
     row-gap: 28px;
   }
 
+  .nav__mark { gap: 14px; }
   .nav__mark img { width: min(56vw, 220px); }
   .nav__links { align-self: center; }
   .nav__links a { font-size: clamp(40px, 12vw, 64px); }

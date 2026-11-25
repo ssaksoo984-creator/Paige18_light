@@ -23,43 +23,9 @@
     return '<div class="ph ph--' + tone + '" data-label="' + escapeHtml(label) + '">' + inner + "</div>";
   }
 
-  /* ---------- Logo concept (A: sketch poppy · B: red poppy) ---------- */
+  /* ---------- Hero entrance ---------- */
 
-  var LOGO_KEY = "paige18-logo";
-
-  function setLogo(v) {
-    if (v !== "a" && v !== "b") return;
-    document.documentElement.setAttribute("data-logo", v);
-    try { localStorage.setItem(LOGO_KEY, v); } catch (e) {}
-    var fav = $('link[rel="icon"]');
-    if (fav) fav.href = "assets/img/logo/concepts/favicon-" + v + ".png";
-    $$("[data-pick]").forEach(function (b) {
-      b.setAttribute("aria-pressed", b.getAttribute("data-pick") === v ? "true" : "false");
-    });
-  }
-
-  setLogo(document.documentElement.getAttribute("data-logo") || "a");
-
-  $$(".logo-switch [data-pick]").forEach(function (b) {
-    b.addEventListener("click", function () { setLogo(b.getAttribute("data-pick")); });
-  });
-
-  // Entry screen: pick a logo concept, then enter the site
-  var intro = $("#intro");
-  if (intro) {
-    document.body.classList.add("intro-open");
-    $$("[data-pick]", intro).forEach(function (b) {
-      b.addEventListener("click", function () {
-        setLogo(b.getAttribute("data-pick"));
-        intro.classList.add("is-leaving");
-        document.body.classList.remove("intro-open");
-        setTimeout(function () { document.body.classList.add("hero-in"); }, 250);
-        setTimeout(function () { intro.hidden = true; }, 700);
-      });
-    });
-  } else {
-    requestAnimationFrame(function () { document.body.classList.add("hero-in"); });
-  }
+  requestAnimationFrame(function () { document.body.classList.add("hero-in"); });
 
   /* ---------- Header ---------- */
 
