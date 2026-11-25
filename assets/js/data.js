@@ -93,20 +93,6 @@ window.PAIGE_WORKS = [
     status: "Leo nominee",
     poster: "assets/img/works/morrow.jpg",
     preview: "", trailer: ""
-  },
-  {
-    id: "footprints",
-    title: "Footprints",
-    type: "feature",
-    year: "",
-    runtime: "Feature Film",
-    tone: "ash",
-    logline: "A feature-length Sasquatch adventure mystery set in the Pacific Northwest.",
-    synopsis: "Rhonda Dent's feature-length Sasquatch adventure mystery, set among the forests of the Pacific Northwest. Currently in development.",
-    credits: { "Format": "Feature Film", "Genre": "Adventure · Mystery", "Setting": "Pacific Northwest", "Status": "In development" },
-    status: "In development",
-    poster: "assets/img/works/footprints.jpg",
-    preview: "", trailer: ""
   }
 ];
 

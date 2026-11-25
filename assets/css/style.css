@@ -179,7 +179,7 @@ input, select, textarea { font: inherit; color: inherit; }
 .logo {
   position: relative;
   display: block;
-  height: 54px;
+  height: 36px;
 }
 
 /* Logo concept: only the chosen concept's artwork is shown */
@@ -633,7 +633,7 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
 
 .works__grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--line);
 }
 
@@ -1459,7 +1459,19 @@ body.menu-open .logo-switch { opacity: 0; pointer-events: none; }
   .intro__card + .intro__card { border-left: 0; border-top: 1px solid var(--line); }
   .intro__card img { max-height: 26vh; }
 
-  .logo { height: 44px; }
+  .logo { height: 28px; }
+
+  /* Phones: solid light header with the black logo */
+  .site-header,
+  .site-header.is-solid {
+    background: rgba(243, 239, 234, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--ink);
+    border-bottom-color: var(--line);
+  }
+  .site-header:not(.is-solid):not(.site-header--solid) .logo__img--red { opacity: 1; }
+  .site-header:not(.is-solid):not(.site-header--solid) .logo__img--white { opacity: 0; }
 
   .hero__bottom { grid-template-columns: 1fr; }
   .hero__side { justify-items: start; text-align: left; }
@@ -1599,3 +1611,45 @@ body.hero-in .hero__title .line > span { transform: none; }
 }
 
 .work-hero .ph > img { object-position: 50% 22%; }
+
+/* ---------- Recognition: darkened still behind, blurred glass panel ---------- */
+
+.press--photo {
+  background: #120d0b url("../img/works/songbird-still.jpg") center 35% / cover no-repeat;
+  color: var(--paper);
+}
+
+.press--photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 9, 8, 0.72), rgba(12, 9, 8, 0.82));
+  pointer-events: none;
+}
+
+.press--photo > * { position: relative; }
+
+.press--photo .section__head,
+.press--photo .laurels,
+.press--photo .quotes,
+.press--photo .press__tagline {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+
+.press--photo .section__head { margin: clamp(48px, 7vw, 96px) var(--gutter) 0; padding-left: clamp(20px, 3vw, 40px); padding-right: clamp(20px, 3vw, 40px); padding-top: clamp(32px, 4vw, 56px); }
+.press--photo .laurels { margin: 0 var(--gutter); border-color: rgba(248, 245, 241, 0.25); }
+.press--photo .laurel { color: var(--paper); }
+.press--photo .laurel + .laurel { border-left-color: rgba(248, 245, 241, 0.25); }
+.press--photo .quotes { margin: 0 var(--gutter); padding-left: clamp(20px, 3vw, 40px); padding-right: clamp(20px, 3vw, 40px); }
+.press--photo .press__tagline { margin: 0 var(--gutter) clamp(48px, 7vw, 96px); padding: 0 clamp(20px, 3vw, 40px) clamp(28px, 4vw, 48px); }
+
+.press--photo .section__script,
+.press--photo .quotes__big,
+.press--photo .press__tagline,
+.press--photo .quote p { color: var(--paper); }
+.press--photo .section__aside { color: rgba(248, 245, 241, 0.8); }
+.press--photo .quote { border-color: rgba(248, 245, 241, 0.25); }
+.press--photo .quote cite { color: rgba(248, 245, 241, 0.65); }
+.press--photo .press__flower { display: none; }
