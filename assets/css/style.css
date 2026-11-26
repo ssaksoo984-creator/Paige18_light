@@ -3,21 +3,21 @@
    ========================================================================== */
 
 :root {
-  --bg: #f3efea;
-  --paper: #f8f5f1;
-  --ink: #1b1817;
-  --ink-soft: #5d5653;
-  --red: #d01d29;        /* point red: a shade darker than the logo red #ea1621 */
-  --red-deep: #a8141f;
-  --red-tint: #f4d4d3;
+  --bg: #f7f5f1;          /* Paper */
+  --paper: #fbfaf7;
+  --ink: #111111;         /* Ink */
+  --ink-soft: #5c5854;
+  --red: #c72629;         /* Poppy Red */
+  --red-deep: #a11d20;
+  --red-tint: #f3d6d5;
   --blue: #cdd8e0;       /* pale editorial blue */
   --blue-deep: #6f8a9c;
-  --stone: #d9d3cc;
-  --line: rgba(208, 29, 41, 0.34);
-  --line-ink: rgba(27, 24, 23, 0.14);
+  --stone: #d8d5d0;
+  --line: rgba(199, 38, 41, 0.32);
+  --line-ink: rgba(17, 17, 17, 0.14);
 
-  --f-sans: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
-  --f-logo: "Jost", "Inter Tight", sans-serif;
+  --f-sans: "Nunito Sans", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --f-head: "Montserrat", "Gotham", "Helvetica Neue", Arial, sans-serif;
   --f-script: "Mrs Saint Delafield", "Brush Script MT", cursive;
 
   --gutter: clamp(16px, 3vw, 40px);
@@ -169,7 +169,7 @@ input, select, textarea { font: inherit; color: inherit; }
 
 .site-header.is-solid,
 .site-header--solid {
-  background: rgba(243, 239, 234, 0.92);
+  background: rgba(247, 245, 241, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: var(--ink);
@@ -224,7 +224,7 @@ body.menu-open .site-header .logo__img--red { opacity: 0; }
 }
 
 .nav__mark { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.nav__mark img { width: min(30vw, 400px); height: auto; }
+.nav__mark img { width: min(24vw, 320px); height: auto; }
 
 .nav__links { display: flex; flex-direction: column; gap: 2px; }
 
@@ -671,7 +671,7 @@ body.menu-open .menu-btn__icon span:last-child { top: 9px; transform: rotate(-45
   flex-direction: column;
   justify-content: space-between;
   padding: 18px;
-  background: rgba(208, 29, 41, 0.9);
+  background: rgba(199, 38, 41, 0.9);
   color: var(--paper);
   opacity: 0;
   transition: opacity 0.4s var(--ease);
@@ -1461,7 +1461,7 @@ body.menu-open .logo-switch { opacity: 0; pointer-events: none; }
   /* Phones: solid light header with the black logo */
   .site-header,
   .site-header.is-solid {
-    background: rgba(243, 239, 234, 0.94);
+    background: rgba(247, 245, 241, 0.94);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: var(--ink);
@@ -1626,7 +1626,7 @@ body.hero-in .hero__title .line > span { transform: none; }
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(243, 239, 234, 0.6);
+  background: rgba(247, 245, 241, 0.6);
   pointer-events: none;
 }
 
@@ -1647,3 +1647,31 @@ body,
 .site-header.is-solid,
 .site-header--solid,
 .intro__card { background-image: var(--grain); }
+
+/* ---------- Brand type: Montserrat (Gotham) headlines, Nunito Sans (Avenir Next) body ---------- */
+
+h1, h2, h3,
+.display,
+.section__script,
+.contact__script,
+.founder__name,
+.stat__value,
+.work__name,
+.person__name,
+.nav__links a,
+.quotes__big,
+.press__tagline,
+.inquiry-tab strong,
+.value h3,
+.btn,
+.eyebrow,
+.filter,
+.link-arrow,
+.menu-btn__label,
+.marquee__track span { font-family: var(--f-head); }
+
+.display,
+.section__script,
+.contact__script,
+.founder__name,
+.nav__links a { letter-spacing: -0.03em; }
